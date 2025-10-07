@@ -1,0 +1,130 @@
+[
+  {
+    "name": "2025/10",
+    "month": 10,
+    "year": 2025,
+    "elements": ["Hydro", "Electro", "Geo"],
+    "starting_characters": ["Yelan", "Aino", "Varesa", "Iansan", "Arataki Itto", "Gorou"],
+    "special_characters": ["Lauma", "Baizhu", "Charlotte", "Ifa"]
+  },
+  {
+    "name": "2025/09",
+    "month": 9,
+    "year": 2025,
+    "elements": ["Pyro", "Hydro", "Dendro"],
+    "starting_characters": ["Hu Tao", "Thoma", "Nilou", "Xingqiu", "Baizhu", "Collei"],
+    "special_characters": ["Chasca", "Citlali", "Ineffa", "Iansan"]
+  },
+  {
+    "name": "2025/08",
+    "month": 8,
+    "year": 2025,
+    "elements": ["Electro", "Cryo", "Anemo"],
+    "starting_characters": ["Yae Miko", "Kuki Shinobu", "Ganyu", "Layla", "Yumemizuki Mizuki", "Sucrose"],
+    "special_characters": ["Neuvillette", "Nahida", "Xingqiu", "Gaming"]
+  },
+  {
+    "name": "2025/07",
+    "month": 7,
+    "year": 2025,
+    "elements": ["Pyro", "Hydro", "Cryo"],
+    "starting_characters": ["Lyney", "Xiangling", "Tartaglia", "Dahlia", "Wriothesley", "Rosaria"],
+    "special_characters": ["Emilie", "Kinich", "Lan Yan", "Noelle"]
+  },
+  {
+    "name": "2025/06",
+    "month": 6,
+    "year": 2025,
+    "elements": ["Electro", "Cryo", "Dendro"],
+    "starting_characters": ["Cyno", "Fischl", "Qiqi", "Mika", "Nahida", "Collei"],
+    "special_characters": ["Furina", "Xingqiu", "Dehya", "Xiangling"]
+  },
+  {
+    "name": "2025/05",
+    "month": 5,
+    "year": 2025,
+    "elements": ["Hydro", "Cryo", "Geo"],
+    "starting_characters": ["Neuvillette", "Candace", "Kamisato Ayaka", "Charlotte", "Albedo", "Kachina"],
+    "special_characters": ["Venti", "Hu Tao", "Kuki Shinobu", "Kaveh"]
+  },
+  {
+    "name": "2025/04",
+    "month": 4,
+    "year": 2025,
+    "elements": ["Pyro", "Electro", "Anemo"],
+    "starting_characters": ["Yoimiya", "Thoma", "Clorinde", "Beidou", "Xiao", "Sucrose"],
+    "special_characters": ["Xilonen", "Alhaitham", "Yaoyao", "Mika"]
+  },
+  {
+    "name": "2025/03",
+    "month": 3,
+    "year": 2025,
+    "elements": ["Hydro", "Electro", "Cryo"],
+    "starting_characters": ["Kamisato Ayato", "Barbara", "Raiden Shogun", "Ororon", "Eula", "Layla"],
+    "special_characters": ["Yumemizuki Mizuki", "Navia", "Xinyan", "Thoma"]
+  },
+  {
+    "name": "2025/02",
+    "month": 2,
+    "year": 2025,
+    "elements": ["Pyro", "Hydro", "Anemo"],
+    "starting_characters": ["Hu Tao", "Gaming", "Mona", "Xingqiu", "Venti", "Shikanoin Heizou"],
+    "special_characters": ["Clorinde", "Ororon", "Citlali", "Yun Jin"]
+  },
+  {
+    "name": "2025/01",
+    "month": 1,
+    "year": 2025,
+    "elements": ["Pyro", "Cryo", "Geo"],
+    "starting_characters": ["Diluc", "Bennett", "Ganyu", "Kaeya", "Navia", "Noelle"],
+    "special_characters": ["Kamisato Ayato", "Xianyun", "Sayu", "Fischl"]
+  },
+  {
+    "name": "2024/12",
+    "month": 12,
+    "year": 2024,
+    "elements": ["Hydro", "Electro", "Anemo"],
+    "starting_characters": ["Sangonomiya Kokomi", "Xingqiu", "Raiden Shogun", "Kujou Sara", "Jean", "Lynette"],
+    "special_characters": ["Lyney", "Bennett", "Zhongli", "Collei"]
+  },
+  {
+    "name": "2024/11",
+    "month": 11,
+    "year": 2024,
+    "elements": ["Pyro", "Electro", "Dendro"],
+    "starting_characters": ["Klee", "Xinyan", "Yae Miko", "Dori", "Tighnari", "Kirara"],
+    "special_characters": ["Xilonen", "Chiori", "Xingqiu", "Layla"]
+  },
+  {
+    "name": "2024/10",
+    "month": 10,
+    "year": 2024,
+    "elements": ["Pyro", "Electro", "Geo"],
+    "starting_characters": ["Dehya", "Chevreuse", "Keqing", "Fischl", "Chiori", "Ningguang"],
+    "special_characters": ["Kinich", "Yelan", "Venti", "Sucrose"]
+  },
+  {
+    "name": "2024/09",
+    "month": 9,
+    "year": 2024,
+    "elements": ["Pyro", "Hydro", "Dendro"],
+    "starting_characters": ["Dehya", "Xiangling", "Mualani", "Candace", "Emilie", "Yaoyao"],
+    "special_characters": ["Kaedehara Kazuha", "Kachina", "Raiden Shogun", "Clorinde"]
+  },
+  {
+    "name": "2024/08",
+    "month": 8,
+    "year": 2024,
+    "elements": ["Hydro", "Cryo", "Anemo"],
+    "starting_characters": ["Furina", "Barbara", "Kamisato Ayaka", "Diona", "Xiao", "Faruzan"],
+    "special_characters": ["Nahida", "Emilie", "Dehya", "Xiangling"]
+  },
+  {
+    "name": "2024/07",
+    "month": 7,
+    "year": 2024,
+    "elements": ["Pyro", "Electro", "Anemo"],
+    "starting_characters": ["Arlecchino", "Thoma", "Clorinde", "Kuki Shinobu", "Wanderer", "Faruzan"],
+    "special_characters": ["Baizhu", "Sigewinne", "Alhaitham", "Wriothesley"]
+  }
+]
