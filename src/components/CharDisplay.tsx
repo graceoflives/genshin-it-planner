@@ -23,18 +23,18 @@ const CharDisplay = ({ char, isTrial }: Props) => {
           position: 'relative',
           width: '100%',
           height: 100,
-          backgroundImage: `url("src/assets/images/rarity/rarity_${detail.rarity}.png")`,
+          backgroundImage: `url("images/rarity/rarity_${detail.rarity}.png")`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain',
           borderRadius: 1
         }}
       >
         <img
-          src={`src/assets/images/element/${detail.element}.png`}
+          src={`images/element/${detail.element}.png`}
           style={{ position: 'absolute', width: 25, height: 25 }}
         />
         <img
-          src={`src/assets/images/character/${char?.name}.png`}
+          src={`images/character/${char?.name}.png`}
           style={{ width: '100%', height: '100%', objectFit: 'contain' }}
         />
       </Box>
