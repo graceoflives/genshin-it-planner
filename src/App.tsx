@@ -98,7 +98,10 @@ function App() {
           c.level < ACCEPTANCE_LEVEL &&
           (selectedPresetData.elements.includes(c.element) || selectedPresetData.special_characters.includes(c.name))
       )
-    const totalEligible = starters.length + eligibles.length + (convertible.level >= ACCEPTANCE_LEVEL ? 1 : 0)
+    const totalEligible =
+      selectedPresetData?.starting_characters.length +
+      eligibles.length +
+      (convertible.level >= ACCEPTANCE_LEVEL ? 1 : 0)
     return {
       traveler: {
         info: convertible,
@@ -112,7 +115,6 @@ function App() {
       totalEligible
     }
   }, [selectedPresetData, characters])
-  console.log(traveler)
 
   return (
     <>
