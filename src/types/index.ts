@@ -106,8 +106,8 @@ export type CharacterName =
   | 'Zhongli'
 
 export interface CharacterProps {
-  name: string
-  element: string
+  name: CharacterName
+  element: ElementType
   level: number
   actived_constellation_num: number
 }

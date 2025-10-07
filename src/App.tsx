@@ -29,8 +29,9 @@ import presetDataAsset from './assets/preset_data.json'
 import { useMemo } from 'react'
 import useCharacterStore from './stores/useCharacterStore'
 import { ACCEPTANCE_LEVEL, CONVERTIBLE_ELEMENTS } from './constants'
-import type { CharacterProps } from './types'
+import type { CharacterProps, PresetDataType } from './types'
 import CharDisplay from './components/CharDisplay'
+import ElementDisplay from './components/ElementDisplay'
 
 const howToGetCharacters = [
   'Open Battle Chronicle from Hoyolab',
@@ -63,7 +64,7 @@ function App() {
   const { characters } = useCharacterStore()
   const selectedPresetData = useMemo(() => {
     if (!presetName) return undefined
-    return presetDataAsset.find((itData) => itData.name === presetName)
+    return (presetDataAsset as PresetDataType[]).find((itData) => itData.name === presetName)
   }, [presetName])
 
   const { traveler, starters, eligibles, upgradables, totalEligible } = useMemo(() => {
@@ -78,10 +79,11 @@ function App() {
 
     const convertible = characters.find((c) => c.name === 'Traveler')!
     const starters = characters.filter((c) => selectedPresetData.starting_characters.includes(c.name))
-
+    const notTravelerFilter = (character: CharacterProps) => character.name !== 'Traveler'
     const notStarterFilter = (character: CharacterProps) =>
       !selectedPresetData.starting_characters.includes(character.name)
     const eligibles = characters
+      .filter(notTravelerFilter)
       .filter(notStarterFilter)
       .filter(
         (c) =>
@@ -89,6 +91,7 @@ function App() {
           (selectedPresetData.elements.includes(c.element) || selectedPresetData.special_characters.includes(c.name))
       )
     const upgradables = characters
+      .filter(notTravelerFilter)
       .filter(notStarterFilter)
       .filter(
         (c) =>
@@ -208,7 +211,7 @@ function App() {
                       </Grid>
                     </Typography>
                     <Typography variant='overline' gutterBottom>
-                      Can upgrade to eligible ({upgradables.length})
+                      Upgradable ({upgradables.length})
                     </Typography>
                     <Typography variant='body1' gutterBottom>
                       <Grid container spacing={1}>
@@ -268,7 +271,13 @@ function App() {
                           Elements
                         </Typography>
                         <Typography variant='body1' gutterBottom>
-                          {selectedPresetData.elements.join(', ')}
+                          <Grid container spacing={1}>
+                            {selectedPresetData.elements.map((e) => (
+                              <Grid key={e}>
+                                <ElementDisplay element={e} />
+                              </Grid>
+                            ))}
+                          </Grid>
                         </Typography>
                         <Typography variant='overline' gutterBottom>
                           Starting Characters
