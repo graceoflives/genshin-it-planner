@@ -14,7 +14,7 @@ const CharDisplay = ({ char, isTrial }: Props) => {
   return (
     <Box
       sx={{
-        width: '100%',
+        width: 100,
         borderRadius: 1
       }}
     >
@@ -29,7 +29,7 @@ const CharDisplay = ({ char, isTrial }: Props) => {
           borderRadius: 1
         }}
       >
-        <img src={`images/element/${detail.element}.png`} style={{ position: 'absolute', width: 25, height: 25 }} />
+        <img src={`images/element/${char.element ?? detail.element}.png`} style={{ position: 'absolute', width: 25, height: 25 }} />
         <img
           src={`images/character/${char?.name}.png`}
           style={{ width: '100%', height: '100%', objectFit: 'contain' }}

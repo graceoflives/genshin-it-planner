@@ -101,6 +101,7 @@ function App() {
     const totalEligible = starters.length + eligibles.length + (convertible.level >= ACCEPTANCE_LEVEL ? 1 : 0)
     return {
       traveler: {
+        info: convertible,
         eligible: convertible.level >= ACCEPTANCE_LEVEL,
         shouldResonate: !selectedPresetData.elements.includes(convertible.element),
         resonatableElements: CONVERTIBLE_ELEMENTS.filter((element) => selectedPresetData.elements.includes(element))
@@ -111,6 +112,8 @@ function App() {
       totalEligible
     }
   }, [selectedPresetData, characters])
+  console.log(traveler)
+
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -168,20 +171,35 @@ function App() {
                       Traveler ({traveler.eligible ? 1 : 0})
                     </Typography>
                     <Typography variant='body1' gutterBottom>
-                      {traveler.eligible ? (
-                        <Typography component='span' color='success'>
-                          eligible
-                        </Typography>
-                      ) : (
-                        <Typography component='span' color='error'>
-                          not enough level
-                        </Typography>
-                      )}
-                      {traveler.shouldResonate && (
-                        <Typography component='span' color='warning'>
-                          , should resonate with {traveler.resonatableElements.join(', ')}
-                        </Typography>
-                      )}
+                      <Grid container spacing={1} alignItems='center'>
+                        <CharDisplay
+                          char={{ name: 'Traveler', level: traveler?.info.level, element: traveler?.info.element }}
+                        />
+                        {traveler.eligible ? (
+                          <Typography component='span' color='success'>
+                            <CheckIcon color='success' />
+                          </Typography>
+                        ) : (
+                          <Typography component='span' color='error'>
+                            <ClearIcon color='error' />
+                          </Typography>
+                        )}
+                        {traveler.shouldResonate && (
+                          <>
+                            <Typography component='span' color='warning'>
+                              resonate towards{' '}
+                            </Typography>
+                            <Grid container spacing={1} alignItems='center'>
+                              {traveler.resonatableElements.map((element) => (
+                                <CharDisplay
+                                  char={{ name: 'Traveler', level: traveler?.info.level, element: element }}
+                                  key={element}
+                                />
+                              ))}
+                            </Grid>
+                          </>
+                        )}
+                      </Grid>
                     </Typography>
                     <Typography variant='overline' gutterBottom>
                       Starters ({selectedPresetData?.starting_characters.length})
