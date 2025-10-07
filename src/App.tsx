@@ -30,6 +30,7 @@ import { useMemo } from 'react'
 import useCharacterStore from './stores/useCharacterStore'
 import { ACCEPTANCE_LEVEL, CONVERTIBLE_ELEMENTS } from './constants'
 import type { CharacterProps } from './types'
+import CharDisplay from './components/CharDisplay'
 
 const howToGetCharacters = [
   'Open Battle Chronicle from Hoyolab',
@@ -183,24 +184,40 @@ function App() {
                       Starters ({selectedPresetData?.starting_characters.length})
                     </Typography>
                     <Typography variant='body1' gutterBottom>
-                      {selectedPresetData?.starting_characters
-                        .map((n) => {
-                          const onlyTrial = starters.every((ss) => ss.name !== n || ss.level < ACCEPTANCE_LEVEL)
-                          return n + (onlyTrial ? ' (Trial)' : '')
-                        })
-                        .join(', ')}
+                      <Grid container spacing={1}>
+                        {selectedPresetData?.starting_characters.map((c) => (
+                          <Grid key={c}>
+                            <CharDisplay
+                              char={starters.find((ss) => ss.name === c) ?? { name: c }}
+                              isTrial={starters.every((ss) => ss.name !== c || ss?.level < ACCEPTANCE_LEVEL)}
+                            />
+                          </Grid>
+                        ))}
+                      </Grid>
                     </Typography>
                     <Typography variant='overline' gutterBottom>
                       Eligible ({eligibles.length})
                     </Typography>
                     <Typography variant='body1' gutterBottom>
-                      {eligibles.map((c) => c.name).join(', ')}
+                      <Grid container spacing={1}>
+                        {eligibles.map((c) => (
+                          <Grid key={c.name}>
+                            <CharDisplay char={c} isTrial={false} />
+                          </Grid>
+                        ))}
+                      </Grid>
                     </Typography>
                     <Typography variant='overline' gutterBottom>
                       Can upgrade to eligible ({upgradables.length})
                     </Typography>
                     <Typography variant='body1' gutterBottom>
-                      {upgradables.map((c) => c.name).join(', ')}
+                      <Grid container spacing={1}>
+                        {upgradables.map((c) => (
+                          <Grid key={c.name}>
+                            <CharDisplay char={c} isTrial={false} />
+                          </Grid>
+                        ))}
+                      </Grid>
                     </Typography>
                   </>
                 )}
@@ -257,13 +274,25 @@ function App() {
                           Starting Characters
                         </Typography>
                         <Typography variant='body1' gutterBottom>
-                          {selectedPresetData.starting_characters.join(', ')}
+                          <Grid container spacing={1}>
+                            {selectedPresetData.starting_characters.map((c) => (
+                              <Grid key={c}>
+                                <CharDisplay char={{ name: c }} />
+                              </Grid>
+                            ))}
+                          </Grid>
                         </Typography>
                         <Typography variant='overline' gutterBottom>
                           Special Guests
                         </Typography>
                         <Typography variant='body1' gutterBottom>
-                          {selectedPresetData.special_characters.join(', ')}
+                          <Grid container spacing={1}>
+                            {selectedPresetData.special_characters.map((c) => (
+                              <Grid key={c}>
+                                <CharDisplay char={{ name: c }} />
+                              </Grid>
+                            ))}
+                          </Grid>
                         </Typography>
                       </>
                     )}
