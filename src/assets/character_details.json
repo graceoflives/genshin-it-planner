@@ -396,6 +396,12 @@
     "element": "Geo"
   },
   {
+    "name": "Nefer",
+    "rarity": 5,
+    "weapon": "Catalyst",
+    "element": "Dendro"
+  },
+  {
     "name": "Neuvillette",
     "rarity": 5,
     "weapon": "Catalyst",

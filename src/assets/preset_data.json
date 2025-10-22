@@ -1,5 +1,21 @@
 [
   {
+    "name": "2025/12",
+    "month": 12,
+    "year": 2025,
+    "elements": ["Pyro", "Cryo", "Anemo"],
+    "starting_characters": ["Klee", "Bennett", "Citlali", "Diona", "Chasca", "Sucrose"],
+    "special_characters": ["Mona", "Mualani", "Albedo", "Fischl"]
+  },
+  {
+    "name": "2025/11",
+    "month": 11,
+    "year": 2025,
+    "elements": ["Hydro", "Electro", "Dendro"],
+    "starting_characters": ["Furina", "Barbara", "Cyno", "Ororon", "Alhaitham", "Yaoyao"],
+    "special_characters": ["Arlecchino", "Zhongli", "Diona", "Lynette"]
+  },
+  {
     "name": "2025/10",
     "month": 10,
     "year": 2025,
