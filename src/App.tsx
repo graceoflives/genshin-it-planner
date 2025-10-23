@@ -79,11 +79,12 @@ function App() {
 
     const convertible = characters.find((c) => c.name === 'Traveler')!
     const starters = characters.filter((c) => selectedPresetData.starting_characters.includes(c.name))
-    const notTravelerFilter = (character: CharacterProps) => character.name !== 'Traveler'
+    const notTravelerOrManekinFilter = (character: CharacterProps) =>
+      !['Traveler', 'Manekin', 'Manekina'].includes(character.name)
     const notStarterFilter = (character: CharacterProps) =>
       !selectedPresetData.starting_characters.includes(character.name)
     const eligibles = characters
-      .filter(notTravelerFilter)
+      .filter(notTravelerOrManekinFilter)
       .filter(notStarterFilter)
       .filter(
         (c) =>
@@ -91,7 +92,7 @@ function App() {
           (selectedPresetData.elements.includes(c.element) || selectedPresetData.special_characters.includes(c.name))
       )
     const upgradables = characters
-      .filter(notTravelerFilter)
+      .filter(notTravelerOrManekinFilter)
       .filter(notStarterFilter)
       .filter(
         (c) =>
