@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import useCharacterStore from '../stores/useCharacterStore'
+import defaultList from '../assets/character_details.json'
+import type { CharacterName, CharacterProps } from '../types'
 
 const useCharacterData = () => {
   const [rawCharacterData, setRawCharacterData] = useState('')
@@ -16,7 +18,14 @@ const useCharacterData = () => {
       const data = JSON.parse(rawCharacterData)
       setInputState('success')
       setInputMsg('')
-      saveData(data.data.list)
+      const listWithNameSwitchedToEnglish = (data.data.list as CharacterProps[]).map((character) => {
+        const englishName = defaultList.find((item) => item.id === character.id)!.name as CharacterName
+        return {
+          ...character,
+          name: englishName
+        }
+      })
+      saveData(listWithNameSwitchedToEnglish)
     } catch (error: unknown) {
       setInputState('error')
       setInputMsg((error as Error).message)

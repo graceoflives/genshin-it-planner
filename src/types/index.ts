@@ -106,6 +106,7 @@ export type CharacterName =
   | 'Zhongli'
 
 export interface CharacterProps {
+  id: number
   name: CharacterName
   element: ElementType
   level: number
