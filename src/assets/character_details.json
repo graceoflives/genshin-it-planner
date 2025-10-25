@@ -420,6 +420,20 @@
     "element": "Pyro"
   },
   {
+    "id": 10000117,
+    "name": "Manekin",
+    "rarity": 5,
+    "weapon": "Sword",
+    "element": "Anemo"
+  },
+  {
+    "id": 10000118,
+    "name": "Manekina",
+    "rarity": 5,
+    "weapon": "Sword",
+    "element": "Anemo"
+  },
+  {
     "id": 10000106,
     "name": "Mavuika",
     "rarity": 5,

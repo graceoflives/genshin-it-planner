@@ -19,14 +19,19 @@ const useCharacterData = () => {
       setInputState('success')
       setInputMsg('')
       const listWithNameSwitchedToEnglish = (data.data.list as CharacterProps[]).map((character) => {
-        const englishName = defaultList.find((item) => item.id === character.id)!.name as CharacterName
-        return {
-          ...character,
-          name: englishName
+        const foundCharacter = defaultList.find((item) => item.id === character.id)
+        if (foundCharacter) {
+          const englishName = foundCharacter.name as CharacterName
+          return {
+            ...character,
+            name: englishName
+          }
         }
+        return character
       })
       saveData(listWithNameSwitchedToEnglish)
     } catch (error: unknown) {
+      console.error(error)
       setInputState('error')
       setInputMsg((error as Error).message)
     }
