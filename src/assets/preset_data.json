@@ -1,5 +1,13 @@
 [
   {
+    "name": "2026/01",
+    "month": 1,
+    "year": 2026,
+    "elements": ["Pyro", "Hydro", "Electro"],
+    "starting_characters": ["Mavuika", "Yanfei", "Sigewinne", "Dahlia", "Clorinde", "Iansan"],
+    "special_characters": ["Xilonen", "Xianyun", "Venti", "Collei"]
+  },
+  {
     "name": "2025/12",
     "month": 12,
     "year": 2025,
