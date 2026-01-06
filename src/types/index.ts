@@ -105,6 +105,13 @@ export type CharacterName =
   | 'Yun Jin'
   | 'Zhongli'
 
+export interface CharacterBasicInfoProps {
+  id: number
+  name: CharacterName
+  element: ElementType
+  rarity: number
+  weapon: WeaponType
+}
 export interface CharacterProps {
   id: number
   name: CharacterName
@@ -115,7 +122,7 @@ export interface CharacterProps {
 export type ElementType = 'Pyro' | 'Hydro' | 'Electro' | 'Cryo' | 'Anemo' | 'Dendro' | 'Geo'
 export type WeaponType = 'Sword' | 'Claymore' | 'Bow' | 'Polearm' | 'Catalyst'
 export interface ImaginariumDataType {
-  elements: [ElementType, ElementType, ElementType]
+  elements: ElementType[]
   starting_characters: CharacterName[]
   special_characters: CharacterName[]
 }
