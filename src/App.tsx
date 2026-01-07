@@ -1,37 +1,33 @@
-import './App.css'
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  FormControlLabel,
-  Grid,
-  InputAdornment,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  MenuItem,
-  Radio,
-  RadioGroup,
-  TextField,
-  Typography
-} from '@mui/material'
 import {
   Check as CheckIcon,
   ChevronRight as ChevronRightIcon,
   Clear as ClearIcon,
   ExpandMore as ExpandMoreIcon
 } from '@mui/icons-material'
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+  Grid,
+  InputAdornment,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  TextField,
+  Typography
+} from '@mui/material'
+import { useMemo } from 'react'
+import './App.css'
+import presetDataAsset from './assets/preset_data.json'
+import CharDisplay from './components/CharDisplay'
+import SeasonData from './components/SeasonData'
+import { ACCEPTANCE_LEVEL, CONVERTIBLE_ELEMENTS } from './constants'
 import useCharacterData from './hooks/useCharacterData'
 import useTheaterSetup from './hooks/useTheaterSetup'
-import presetDataAsset from './assets/preset_data.json'
-import { useMemo } from 'react'
 import useCharacterStore from './stores/useCharacterStore'
-import { ACCEPTANCE_LEVEL, CONVERTIBLE_ELEMENTS } from './constants'
-import type { CharacterProps, PresetDataType } from './types'
-import CharDisplay from './components/CharDisplay'
-import ElementDisplay from './components/ElementDisplay'
+import type { CharacterProps, ImaginariumDataType, PresetDataType } from './types'
 
 const howToGetCharacters = [
   'Open Battle Chronicle from Hoyolab',
@@ -60,15 +56,26 @@ const renderEndAdornment = (inputState: string) => {
 }
 function App() {
   const { inputState, inputMsg, rawCharacterData, setRawCharacterData } = useCharacterData()
-  const { isUsePresetData, setIsUsePresetData, presetName, setPresetName } = useTheaterSetup()
+  const { isUsePresetData, setIsUsePresetData, presetName, setPresetName, customData, setCustomData } =
+    useTheaterSetup()
+  const onApplyCustomData = (data: ImaginariumDataType) => {
+    setCustomData(data)
+  }
   const { characters } = useCharacterStore()
   const selectedPresetData = useMemo(() => {
     if (!presetName) return undefined
     return (presetDataAsset as PresetDataType[]).find((itData) => itData.name === presetName)
   }, [presetName])
 
+  const selectedData = useMemo(() => {
+    if (isUsePresetData) {
+      return selectedPresetData
+    }
+    return customData ?? undefined
+  }, [isUsePresetData, selectedPresetData, customData])
+
   const { traveler, starters, eligibles, upgradables, totalEligible } = useMemo(() => {
-    if (!selectedPresetData || characters.length === 0)
+    if (!selectedData || characters.length === 0)
       return {
         traveler: undefined,
         starters: [],
@@ -78,18 +85,17 @@ function App() {
       }
 
     const convertible = characters.find((c) => c.name === 'Traveler')!
-    const starters = characters.filter((c) => selectedPresetData.starting_characters.includes(c.name))
+    const starters = characters.filter((c) => selectedData.starting_characters.includes(c.name))
     const notTravelerOrManekinFilter = (character: CharacterProps) =>
       !['Traveler', 'Manekin', 'Manekina'].includes(character.name)
-    const notStarterFilter = (character: CharacterProps) =>
-      !selectedPresetData.starting_characters.includes(character.name)
+    const notStarterFilter = (character: CharacterProps) => !selectedData.starting_characters.includes(character.name)
     const eligibles = characters
       .filter(notTravelerOrManekinFilter)
       .filter(notStarterFilter)
       .filter(
         (c) =>
           c.level >= ACCEPTANCE_LEVEL &&
-          (selectedPresetData.elements.includes(c.element) || selectedPresetData.special_characters.includes(c.name))
+          (selectedData.elements.includes(c.element) || selectedData.special_characters.includes(c.name))
       )
     const upgradables = characters
       .filter(notTravelerOrManekinFilter)
@@ -97,25 +103,23 @@ function App() {
       .filter(
         (c) =>
           c.level < ACCEPTANCE_LEVEL &&
-          (selectedPresetData.elements.includes(c.element) || selectedPresetData.special_characters.includes(c.name))
+          (selectedData.elements.includes(c.element) || selectedData.special_characters.includes(c.name))
       )
     const totalEligible =
-      selectedPresetData?.starting_characters.length +
-      eligibles.length +
-      (convertible.level >= ACCEPTANCE_LEVEL ? 1 : 0)
+      selectedData?.starting_characters.length + eligibles.length + (convertible.level >= ACCEPTANCE_LEVEL ? 1 : 0)
     return {
       traveler: {
         info: convertible,
         eligible: convertible.level >= ACCEPTANCE_LEVEL,
-        shouldResonate: !selectedPresetData.elements.includes(convertible.element),
-        resonatableElements: CONVERTIBLE_ELEMENTS.filter((element) => selectedPresetData.elements.includes(element))
+        shouldResonate: !selectedData.elements.includes(convertible.element),
+        resonatableElements: CONVERTIBLE_ELEMENTS.filter((element) => selectedData.elements.includes(element))
       },
       starters,
       eligibles,
       upgradables,
       totalEligible
     }
-  }, [selectedPresetData, characters])
+  }, [selectedData, characters])
 
   return (
     <>
@@ -249,87 +253,14 @@ function App() {
             </Grid>
           </Grid>
           <Grid size={4}>
-            <Grid container spacing={2}>
-              <Grid size={12}>
-                <RadioGroup
-                  row
-                  value={isUsePresetData ? 'preset' : 'custom'}
-                  onChange={(e) => {
-                    if (e.target.value === 'preset') {
-                      setIsUsePresetData(true)
-                    } else {
-                      setIsUsePresetData(false)
-                    }
-                  }}
-                >
-                  <FormControlLabel value='preset' control={<Radio />} label='Preset data' />
-                  <FormControlLabel value='custom' control={<Radio />} label='Custom data' />
-                </RadioGroup>
-              </Grid>
-              <Grid size={12}>
-                {isUsePresetData && (
-                  <>
-                    <TextField
-                      select
-                      fullWidth
-                      variant='outlined'
-                      label='Select Preset data'
-                      multiline
-                      rows={4}
-                      placeholder='Preset data'
-                      value={presetName}
-                      onChange={(e) => setPresetName(e.target.value)}
-                    >
-                      {presetDataAsset.map((itData) => (
-                        <MenuItem key={itData.name} value={itData.name}>
-                          {itData.name}
-                        </MenuItem>
-                      ))}
-                    </TextField>
-                    {selectedPresetData && (
-                      <>
-                        <Typography variant='overline' gutterBottom>
-                          Elements
-                        </Typography>
-                        <Typography variant='body1' gutterBottom>
-                          <Grid container spacing={1}>
-                            {selectedPresetData.elements.map((e) => (
-                              <Grid key={e}>
-                                <ElementDisplay element={e} />
-                              </Grid>
-                            ))}
-                          </Grid>
-                        </Typography>
-                        <Typography variant='overline' gutterBottom>
-                          Starting Characters
-                        </Typography>
-                        <Typography variant='body1' gutterBottom>
-                          <Grid container spacing={1}>
-                            {selectedPresetData.starting_characters.map((c) => (
-                              <Grid key={c}>
-                                <CharDisplay char={{ name: c }} />
-                              </Grid>
-                            ))}
-                          </Grid>
-                        </Typography>
-                        <Typography variant='overline' gutterBottom>
-                          Special Guests
-                        </Typography>
-                        <Typography variant='body1' gutterBottom>
-                          <Grid container spacing={1}>
-                            {selectedPresetData.special_characters.map((c) => (
-                              <Grid key={c}>
-                                <CharDisplay char={{ name: c }} />
-                              </Grid>
-                            ))}
-                          </Grid>
-                        </Typography>
-                      </>
-                    )}
-                  </>
-                )}
-              </Grid>
-            </Grid>
+            <SeasonData
+              isUsePresetData={isUsePresetData}
+              setIsUsePresetData={setIsUsePresetData}
+              presetName={presetName}
+              setPresetName={setPresetName}
+              selectedPresetData={selectedPresetData}
+              onApplyCustomData={onApplyCustomData}
+            />
           </Grid>
         </Grid>
       </Box>

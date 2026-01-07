@@ -5,8 +5,9 @@ import { Box, Typography } from '@mui/material'
 interface Props {
   char: Partial<CharacterProps>
   isTrial?: boolean
+  width?: number
 }
-const CharDisplay = ({ char, isTrial }: Props) => {
+const CharDisplay = ({ char, isTrial = false, width = 100 }: Props) => {
   const detail = list.find((c) => c.name === char.name)
 
   if (!detail) return null
@@ -14,7 +15,7 @@ const CharDisplay = ({ char, isTrial }: Props) => {
   return (
     <Box
       sx={{
-        width: 100,
+        width,
         borderRadius: 1
       }}
     >
@@ -22,7 +23,7 @@ const CharDisplay = ({ char, isTrial }: Props) => {
         sx={{
           position: 'relative',
           width: '100%',
-          height: 100,
+          height: width,
           backgroundImage: `url("images/rarity/rarity_${detail.rarity}.png")`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain',
@@ -31,7 +32,7 @@ const CharDisplay = ({ char, isTrial }: Props) => {
       >
         <img
           src={`images/element/${char.element ?? detail.element}.png`}
-          style={{ position: 'absolute', width: 25, height: 25 }}
+          style={{ position: 'absolute', width: width / 4, height: width / 4 }}
         />
         <img
           src={`images/character/${char?.name}.png`}
