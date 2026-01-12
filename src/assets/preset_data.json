@@ -1,5 +1,13 @@
 [
   {
+    "name": "2026/02",
+    "month": 2,
+    "year": 2026,
+    "elements": ["Pyro", "Hydro", "Geo"],
+    "starting_characters": ["Yoimiya", "Gaming", "Yelan", "Barbara", "Chiori", "Yun Jin"],
+    "special_characters": ["Ineffa", "Flins", "Nefer", "Lauma"]
+  },
+  {
     "name": "2026/01",
     "month": 1,
     "year": 2026,
