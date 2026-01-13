@@ -44,7 +44,7 @@ const CharDisplay = ({ char, isTrial = false, width = 100 }: Props) => {
               right: 0,
               top: 0,
               backgroundColor: '#D36D84',
-              fontSize: '0.6rem',
+              fontSize: '0.8rem',
               fontWeight: 'bold',
               padding: '4px 6px',
               borderRadius: 1,
@@ -52,6 +52,23 @@ const CharDisplay = ({ char, isTrial = false, width = 100 }: Props) => {
             }}
           >
             Trial
+          </Box>
+        )}
+        {char?.actived_constellation_num && char.actived_constellation_num > 0 && (
+          <Box
+            sx={{
+              position: 'absolute',
+              right: 0,
+              top: 0,
+              backgroundColor: '#757575',
+              fontSize: '0.8rem',
+              fontWeight: 'bold',
+              padding: '4px 6px',
+              borderRadius: 1,
+              color: '#FFF'
+            }}
+          >
+            C{char.actived_constellation_num}
           </Box>
         )}
       </Box>
