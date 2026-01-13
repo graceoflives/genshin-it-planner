@@ -5,6 +5,9 @@ import { ACCEPTANCE_LEVEL, CONVERTIBLE_ELEMENTS } from '../constants'
 import type { CharacterProps, ImaginariumDataType } from '../types'
 import CharDisplay from './CharDisplay'
 
+const notTravelerOrManekinFilter = (character: CharacterProps) =>
+  !['Traveler', 'Manekin', 'Manekina'].includes(character.name)
+
 interface Props {
   seasonData?: ImaginariumDataType
   characters: CharacterProps[]
@@ -22,8 +25,6 @@ const EligibilityDisplay = ({ seasonData, characters }: Props) => {
 
     const convertible = characters.find((c) => c.name === 'Traveler')!
     const starters = characters.filter((c) => seasonData.starting_characters.includes(c.name))
-    const notTravelerOrManekinFilter = (character: CharacterProps) =>
-      !['Traveler', 'Manekin', 'Manekina'].includes(character.name)
     const notStarterFilter = (character: CharacterProps) => !seasonData.starting_characters.includes(character.name)
     const eligibles = characters
       .filter(notTravelerOrManekinFilter)
