@@ -1,6 +1,6 @@
 import type { CharacterProps } from '../types'
 import list from '../assets/character_details.json'
-import { Box, Typography } from '@mui/material'
+import { Avatar, Box, Typography } from '@mui/material'
 
 interface Props {
   char: Partial<CharacterProps>
@@ -30,13 +30,12 @@ const CharDisplay = ({ char, isTrial = false, width = 100 }: Props) => {
           borderRadius: 1
         }}
       >
+        <Avatar src={`images/character/${char?.name}.png`} style={{ width: '100%', height: '100%' }} variant='square'>
+          {char?.name}
+        </Avatar>
         <img
           src={`images/element/${char.element ?? detail.element}.png`}
-          style={{ position: 'absolute', width: width / 4, height: width / 4 }}
-        />
-        <img
-          src={`images/character/${char?.name}.png`}
-          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+          style={{ position: 'absolute', top: 0, left: 0, width: width / 4, height: width / 4 }}
         />
         {isTrial && (
           <Box
