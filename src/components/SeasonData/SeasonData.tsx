@@ -51,10 +51,9 @@ const SeasonData = ({
         </RadioGroup>
       </Grid>
       <Grid size={12}>
-        {isUsePresetData && (
+        {isUsePresetData ? (
           <PresetData presetName={presetName} setPresetName={setPresetName} selectedPresetData={selectedPresetData} />
-        )}
-        {!isUsePresetData && (
+        ) : (
           <CustomData
             elements={elements}
             setElements={setElements}
