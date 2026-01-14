@@ -9,7 +9,7 @@ import {
   Typography,
   type SelectChangeEvent
 } from '@mui/material'
-import { useCallback, useEffect, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import list from '../../assets/character_details.json'
 import {
   ALL_ELEMENTS,
@@ -18,45 +18,52 @@ import {
   CUSTOM_DATA_MAX_STARTING_CHARACTERS,
   CUSTOM_DATA_MAX_STARTING_CHARACTERS_PER_ELEMENT
 } from '../../constants'
+import useCustomDataStore from '../../stores/useCustomDataStore'
 import type { CharacterBasicInfoProps, CharacterName, ElementType } from '../../types'
 import CharDisplay from '../CharDisplay'
 import ElementDisplay from '../ElementDisplay'
 
 interface Props {
-  elements: ElementType[]
-  setElements: (elements: ElementType[]) => void
-  characters: CharacterName[]
-  setCharacters: (characters: CharacterName[]) => void
-  specialGuests: CharacterName[]
-  setSpecialGuests: (guests: CharacterName[]) => void
   applyCustomData: () => void
 }
-const CustomData = ({
-  elements,
-  setElements,
-  characters,
-  setCharacters,
-  specialGuests,
-  setSpecialGuests,
-  applyCustomData
-}: Props) => {
+const CustomData = ({ applyCustomData }: Props) => {
+  const { elements, characters, specialGuests, setElements, setCharacters, setSpecialGuests, isApplied, setIsApplied } =
+    useCustomDataStore()
+
+  const isEnoughCharacterForElement = useCallback(
+    (element: ElementType) =>
+      (list as CharacterBasicInfoProps[]).filter((info) => characters.includes(info.name) && info.element === element)
+        .length >= CUSTOM_DATA_MAX_STARTING_CHARACTERS_PER_ELEMENT,
+    [characters]
+  )
+
   const handleSelectElements = (event: SelectChangeEvent<typeof elements>) => {
     const {
       target: { value }
     } = event
-    setElements(typeof value === 'string' ? (value.split(',') as ElementType[]) : value)
+
+    const toBeElements = typeof value === 'string' ? (value.split(',') as ElementType[]) : value
+    setElements(toBeElements)
+    const areCharactersFitElements = toBeElements.every((element) => isEnoughCharacterForElement(element))
+    if (!areCharactersFitElements && toBeElements.length === CUSTOM_DATA_MAX_ELEMENTS) {
+      setCharacters([])
+      setSpecialGuests([])
+      setIsApplied(false)
+    }
   }
   const handleSelectCharacters = (event: SelectChangeEvent<typeof characters>) => {
     const {
       target: { value }
     } = event
     setCharacters(typeof value === 'string' ? (value.split(',') as CharacterName[]) : value)
+    setIsApplied(false)
   }
   const handleSelectSpecialGuests = (event: SelectChangeEvent<typeof specialGuests>) => {
     const {
       target: { value }
     } = event
     setSpecialGuests(typeof value === 'string' ? (value.split(',') as CharacterName[]) : value)
+    setIsApplied(false)
   }
   const possibleStartingCharacters = useMemo(
     () =>
@@ -77,19 +84,12 @@ const CustomData = ({
       ),
     [elements]
   )
-  const isEnoughCharacterForElement = useCallback(
-    (element: ElementType) =>
-      (list as CharacterBasicInfoProps[]).filter((info) => characters.includes(info.name) && info.element === element)
-        .length >= CUSTOM_DATA_MAX_STARTING_CHARACTERS_PER_ELEMENT,
-    [characters]
-  )
 
-  useEffect(() => {
-    if (elements.length === 3) {
-      setCharacters([])
-      setSpecialGuests([])
-    }
-  }, [elements])
+  const handleApplyCustomData = () => {
+    setIsApplied(true)
+    applyCustomData()
+  }
+
   return (
     <>
       <FormControl fullWidth>
@@ -221,11 +221,12 @@ const CustomData = ({
             variant='contained'
             disabled={
               characters.length !== CUSTOM_DATA_MAX_STARTING_CHARACTERS ||
-              specialGuests.length !== CUSTOM_DATA_MAX_SPECIAL_GUESTS
+              specialGuests.length !== CUSTOM_DATA_MAX_SPECIAL_GUESTS ||
+              isApplied
             }
-            onClick={applyCustomData}
+            onClick={handleApplyCustomData}
           >
-            Apply custom data
+            {isApplied ? 'Applied' : 'Apply custom data'}
           </Button>
         </Grid>
       </FormControl>

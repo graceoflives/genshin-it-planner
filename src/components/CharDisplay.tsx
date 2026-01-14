@@ -37,7 +37,7 @@ const CharDisplay = ({ char, isTrial = false, width = 100 }: Props) => {
           src={`images/element/${char.element ?? detail.element}.png`}
           style={{ position: 'absolute', top: 0, left: 0, width: width / 4, height: width / 4 }}
         />
-        {isTrial && (
+        {Boolean(isTrial) && (
           <Box
             sx={{
               position: 'absolute',
@@ -54,7 +54,7 @@ const CharDisplay = ({ char, isTrial = false, width = 100 }: Props) => {
             Trial
           </Box>
         )}
-        {char?.actived_constellation_num && char.actived_constellation_num > 0 && (
+        {Boolean(char?.actived_constellation_num && char.actived_constellation_num > 0) && (
           <Box
             sx={{
               position: 'absolute',
@@ -72,7 +72,7 @@ const CharDisplay = ({ char, isTrial = false, width = 100 }: Props) => {
           </Box>
         )}
       </Box>
-      {(isTrial || char?.level) && (
+      {Boolean(isTrial || char?.level) && (
         <Typography variant='subtitle1' sx={{ fontSize: '0.75rem', width: '100%', textAlign: 'center' }}>
           Level {isTrial ? 90 : char?.level}
         </Typography>

@@ -140,6 +140,13 @@
     "element": "Dendro"
   },
   {
+    "id": 10000125,
+    "name": "Columbina",
+    "rarity": 5,
+    "weapon": "Catalyst",
+    "element": "Hydro"
+  },
+  {
     "id": 10000071,
     "name": "Cyno",
     "rarity": 5,

@@ -1,6 +1,6 @@
 import { FormControlLabel, Grid, Radio, RadioGroup } from '@mui/material'
-import { useState } from 'react'
-import type { CharacterName, ElementType, ImaginariumDataType, PresetDataType } from '../../types'
+import useCustomDataStore from '../../stores/useCustomDataStore'
+import type { ImaginariumDataType, PresetDataType } from '../../types'
 import CustomData from './CustomData'
 import PresetData from './PresetData'
 
@@ -20,9 +20,7 @@ const SeasonData = ({
   selectedPresetData,
   onApplyCustomData
 }: Props) => {
-  const [elements, setElements] = useState<ElementType[]>([])
-  const [characters, setCharacters] = useState<CharacterName[]>([])
-  const [specialGuests, setSpecialGuests] = useState<CharacterName[]>([])
+  const { elements, characters, specialGuests } = useCustomDataStore()
 
   const applyCustomData = () => {
     const customData: ImaginariumDataType = {
@@ -54,15 +52,7 @@ const SeasonData = ({
         {isUsePresetData ? (
           <PresetData presetName={presetName} setPresetName={setPresetName} selectedPresetData={selectedPresetData} />
         ) : (
-          <CustomData
-            elements={elements}
-            setElements={setElements}
-            characters={characters}
-            setCharacters={setCharacters}
-            specialGuests={specialGuests}
-            setSpecialGuests={setSpecialGuests}
-            applyCustomData={applyCustomData}
-          />
+          <CustomData applyCustomData={applyCustomData} />
         )}
       </Grid>
     </Grid>
