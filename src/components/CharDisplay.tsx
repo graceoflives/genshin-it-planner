@@ -54,7 +54,7 @@ const CharDisplay = ({ char, isTrial = false, width = 100 }: Props) => {
             Trial
           </Box>
         )}
-        {Boolean(char?.actived_constellation_num && char.actived_constellation_num > 0) && (
+        {Boolean(!isTrial && char?.actived_constellation_num && char.actived_constellation_num > 0) && (
           <Box
             sx={{
               position: 'absolute',
