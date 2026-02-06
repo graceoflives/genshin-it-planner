@@ -294,6 +294,13 @@
     "element": "Anemo"
   },
   {
+    "id": 10000127,
+    "name": "Illuga",
+    "rarity": 4,
+    "weapon": "Polearm",
+    "element": "Geo"
+  },
+  {
     "id": 10000116,
     "name": "Ineffa",
     "rarity": 5,
@@ -781,6 +788,13 @@
     "name": "Zhongli",
     "rarity": 5,
     "weapon": "Polearm",
+    "element": "Geo"
+  },
+  {
+    "id": 10000126,
+    "name": "Zibai",
+    "rarity": 5,
+    "weapon": "Sword",
     "element": "Geo"
   }
 ]
