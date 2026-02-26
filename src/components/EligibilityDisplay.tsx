@@ -62,83 +62,76 @@ const EligibilityDisplay = ({ seasonData, characters }: Props) => {
 
   return (
     <>
-      <Typography variant='overline' gutterBottom>
-        Total Selectable
+      <Typography variant='overline' component='p' sx={{ fontSize: '1rem' }}>
+        Selectable{' '}
+        <Typography variant='h5' component='span'>
+          {totalEligible}
+        </Typography>
       </Typography>
-      <Typography variant='body1' gutterBottom>
-        {totalEligible}
+      <Typography variant='overline'>
+        Traveler{' '}
+        <Typography variant='h5' component='span'>
+          {traveler.eligible ? 1 : 0}
+        </Typography>
       </Typography>
-      <Typography variant='overline' gutterBottom>
-        Traveler ({traveler.eligible ? 1 : 0})
-      </Typography>
-      <Typography variant='body1' gutterBottom>
-        <Grid container spacing={1} alignItems='center'>
-          <CharDisplay char={{ name: 'Traveler', level: traveler?.info.level, element: traveler?.info.element }} />
-          {traveler.eligible ? (
-            <Typography component='span' color='success'>
-              <CheckIcon color='success' />
+      <Grid container spacing={1} alignItems='center'>
+        <CharDisplay char={{ name: 'Traveler', level: traveler?.info.level, element: traveler?.info.element }} />
+        {traveler.eligible ? <CheckIcon color='success' /> : <ClearIcon color='error' />}
+        {traveler.shouldResonate && (
+          <>
+            <Typography component='span' color='warning'>
+              resonate towards{' '}
             </Typography>
-          ) : (
-            <Typography component='span' color='error'>
-              <ClearIcon color='error' />
-            </Typography>
-          )}
-          {traveler.shouldResonate && (
-            <>
-              <Typography component='span' color='warning'>
-                resonate towards{' '}
-              </Typography>
-              <Grid container spacing={1} alignItems='center'>
-                {traveler.resonatableElements.map((element) => (
-                  <CharDisplay
-                    char={{ name: 'Traveler', level: traveler?.info.level, element: element }}
-                    key={element}
-                  />
-                ))}
-              </Grid>
-            </>
-          )}
-        </Grid>
-      </Typography>
-      <Typography variant='overline' gutterBottom>
-        Starters ({seasonData?.starting_characters.length})
-      </Typography>
-      <Typography variant='body1' gutterBottom>
-        <Grid container spacing={1}>
-          {seasonData?.starting_characters.map((c) => (
-            <Grid key={c}>
-              <CharDisplay
-                char={starters.find((ss) => ss.name === c) ?? { name: c }}
-                isTrial={starters.every((ss) => ss.name !== c || ss?.level < ACCEPTANCE_LEVEL)}
-              />
+            <Grid container spacing={1} alignItems='center'>
+              {traveler.resonatableElements.map((element) => (
+                <CharDisplay char={{ name: 'Traveler', level: traveler?.info.level, element: element }} key={element} />
+              ))}
             </Grid>
-          ))}
-        </Grid>
+          </>
+        )}
+      </Grid>
+      <Typography variant='overline'>
+        Starters{' '}
+        <Typography variant='h5' component='span'>
+          {seasonData?.starting_characters.length}
+        </Typography>
       </Typography>
-      <Typography variant='overline' gutterBottom>
-        Eligible ({eligibles.length})
+      <Grid container spacing={1}>
+        {seasonData?.starting_characters.map((c) => (
+          <Grid key={c}>
+            <CharDisplay
+              char={starters.find((ss) => ss.name === c) ?? { name: c }}
+              isTrial={starters.every((ss) => ss.name !== c || ss?.level < ACCEPTANCE_LEVEL)}
+            />
+          </Grid>
+        ))}
+      </Grid>
+      <Typography variant='overline'>
+        Eligible{' '}
+        <Typography variant='h5' component='span'>
+          {eligibles.length}
+        </Typography>
       </Typography>
-      <Typography variant='body1' gutterBottom>
-        <Grid container spacing={1}>
-          {eligibles.map((c) => (
-            <Grid key={c.name}>
-              <CharDisplay char={c} isTrial={false} />
-            </Grid>
-          ))}
-        </Grid>
+      <Grid container spacing={1}>
+        {eligibles.map((c) => (
+          <Grid key={c.name}>
+            <CharDisplay char={c} isTrial={false} />
+          </Grid>
+        ))}
+      </Grid>
+      <Typography variant='overline' component='p' sx={{ fontSize: '1rem' }} color='error'>
+        Not Selectable{' '}
+        <Typography variant='h5' component='span'>
+          {upgradables.length}
+        </Typography>
       </Typography>
-      <Typography variant='overline' gutterBottom>
-        Upgradable ({upgradables.length})
-      </Typography>
-      <Typography variant='body1' gutterBottom>
-        <Grid container spacing={1}>
-          {upgradables.map((c) => (
-            <Grid key={c.name}>
-              <CharDisplay char={c} isTrial={false} />
-            </Grid>
-          ))}
-        </Grid>
-      </Typography>
+      <Grid container spacing={1}>
+        {upgradables.map((c) => (
+          <Grid key={c.name}>
+            <CharDisplay char={c} isTrial={false} />
+          </Grid>
+        ))}
+      </Grid>
     </>
   )
 }

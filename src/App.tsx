@@ -11,6 +11,11 @@ import useTheaterSetup from './hooks/useTheaterSetup'
 import useCharacterStore from './stores/useCharacterStore'
 import type { ImaginariumDataType, PresetDataType } from './types'
 
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 const renderEndAdornment = (inputState: string) => {
   if (inputState === 'error') {
     return (
