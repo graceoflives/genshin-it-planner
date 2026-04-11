@@ -1,5 +1,13 @@
 [
   {
+    "name": "2026/05",
+    "month": 5,
+    "year": 2026,
+    "elements": ["Pyro", "Hydro", "Dendro"],
+    "starting_characters": ["Dehya", "Yanfei", "Kamisato Ayato", "Dahlia", "Kinich", "Kirara"],
+    "special_characters": ["Varka", "Razor", "Albedo", "Zibai"]
+  },
+  {
     "name": "2026/04",
     "month": 4,
     "year": 2026,
