@@ -1,5 +1,21 @@
 [
   {
+    "name": "2026/04",
+    "month": 4,
+    "year": 2026,
+    "elements": ["Hydro", "Cryo", "Geo"],
+    "starting_characters": ["Mona", "Xingqiu", "Wriothesley", "Rosaria", "Navia", "Kachina"],
+    "special_characters": ["Chasca", "Sucrose", "Klee", "Lauma"]
+  },
+  {
+    "name": "2026/03",
+    "month": 3,
+    "year": 2026,
+    "elements": ["Electro", "Cryo", "Anemo"],
+    "starting_characters": ["Varesa", "Dori", "Eula", "Mika", "Xianyun", "Sayu"],
+    "special_characters": ["Furina", "Columbina", "Durin", "Bennett"]
+  },
+  {
     "name": "2026/02",
     "month": 2,
     "year": 2026,

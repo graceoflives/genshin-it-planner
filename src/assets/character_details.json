@@ -672,6 +672,13 @@
     "element": "Electro"
   },
   {
+    "id": 10000128,
+    "name": "Varka",
+    "rarity": 5,
+    "weapon": "Claymore",
+    "element": "Anemo"
+  },
+  {
     "id": 10000022,
     "name": "Venti",
     "rarity": 5,

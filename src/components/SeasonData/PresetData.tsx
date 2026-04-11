@@ -31,42 +31,30 @@ const PresetData = ({ presetName, setPresetName, selectedPresetData }: Props) =>
       </TextField>
       {selectedPresetData && (
         <>
-          <Typography variant='overline' gutterBottom>
-            Elements
-          </Typography>
-          <Typography variant='body1' gutterBottom>
-            <Grid container spacing={1}>
-              {selectedPresetData.elements.map((e) => (
-                <Grid key={e}>
-                  <ElementDisplay element={e} />
-                </Grid>
-              ))}
-            </Grid>
-          </Typography>
-          <Typography variant='overline' gutterBottom>
-            Starting Characters
-          </Typography>
-          <Typography variant='body1' gutterBottom>
-            <Grid container spacing={1}>
-              {selectedPresetData.starting_characters.map((c) => (
-                <Grid key={c}>
-                  <CharDisplay char={{ name: c }} />
-                </Grid>
-              ))}
-            </Grid>
-          </Typography>
-          <Typography variant='overline' gutterBottom>
-            Special Guests
-          </Typography>
-          <Typography variant='body1' gutterBottom>
-            <Grid container spacing={1}>
-              {selectedPresetData.special_characters.map((c) => (
-                <Grid key={c}>
-                  <CharDisplay char={{ name: c }} />
-                </Grid>
-              ))}
-            </Grid>
-          </Typography>
+          <Typography variant='overline'>Elements</Typography>
+          <Grid container spacing={1}>
+            {selectedPresetData.elements.map((e) => (
+              <Grid key={e}>
+                <ElementDisplay element={e} />
+              </Grid>
+            ))}
+          </Grid>
+          <Typography variant='overline'>Starting Characters</Typography>
+          <Grid container spacing={1}>
+            {selectedPresetData.starting_characters.map((c) => (
+              <Grid key={c}>
+                <CharDisplay char={{ name: c }} />
+              </Grid>
+            ))}
+          </Grid>
+          <Typography variant='overline'>Special Guests</Typography>
+          <Grid container spacing={1}>
+            {selectedPresetData.special_characters.map((c) => (
+              <Grid key={c}>
+                <CharDisplay char={{ name: c }} />
+              </Grid>
+            ))}
+          </Grid>
         </>
       )}
     </>

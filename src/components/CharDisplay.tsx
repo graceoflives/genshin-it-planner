@@ -73,7 +73,7 @@ const CharDisplay = ({ char, isTrial = false, width = 100 }: Props) => {
         )}
       </Box>
       {Boolean(isTrial || char?.level) && (
-        <Typography variant='subtitle1' sx={{ fontSize: '0.75rem', width: '100%', textAlign: 'center' }}>
+        <Typography variant='subtitle1' sx={{ fontSize: '0.75rem', width: '100%', textAlign: 'center', lineHeight: 1.5 }}>
           Level {isTrial ? 90 : char?.level}
         </Typography>
       )}
