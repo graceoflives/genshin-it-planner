@@ -427,6 +427,13 @@
     "element": "Cryo"
   },
   {
+    "id": 10000130,
+    "name": "Linnea",
+    "rarity": 5,
+    "weapon": "Bow",
+    "element": "Geo"
+  },
+  {
     "id": 10000006,
     "name": "Lisa",
     "rarity": 4,
