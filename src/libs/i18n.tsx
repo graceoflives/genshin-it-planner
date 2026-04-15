@@ -8,6 +8,7 @@ i18n
   .use(backend)
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
+    load: 'currentOnly',
     backend: {
       loadPath: '/genshin-it-planner/locales/{{lng}}/{{ns}}.json'
     },
