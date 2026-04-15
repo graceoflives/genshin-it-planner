@@ -15,6 +15,7 @@ i18n
     defaultNS: 'common',
     fallbackLng: 'en-US',
     keySeparator: '.', // enable dot notation for nested keys
+    nonExplicitSupportedLngs: false,
     interpolation: {
       escapeValue: false // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
     }
