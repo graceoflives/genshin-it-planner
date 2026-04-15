@@ -4,31 +4,35 @@ import { useTranslation } from 'react-i18next'
 const languageOptions = [
   {
     value: 'en-US',
-    label: 'English'
+    label: '🇺🇸 English'
   },
   {
     value: 'zh-CN',
-    label: '中文（简体）'
+    label: '🇨🇳 中文（简体）'
   },
   {
     value: 'ja-JP',
-    label: '日本語'
-  },
-  {
-    value: 'es-ES',
-    label: 'Español'
+    label: '🇯🇵 日本語'
   },
   {
     value: 'fr-FR',
-    label: 'Français'
+    label: '🇫🇷 Français'
+  },
+  {
+    value: 'de-DE',
+    label: '🇩🇪 Deutsch'
+  },
+  {
+    value: 'es-ES',
+    label: '🇪🇸 Español'
   },
   {
     value: 'ru-RU',
-    label: 'Русский'
+    label: '🇷🇺 Русский'
   },
   {
     value: 'vi-VN',
-    label: 'Tiếng Việt'
+    label: '🇻🇳 Tiếng Việt'
   }
 ]
 const SelectLanguage = () => {
