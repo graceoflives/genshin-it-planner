@@ -4,6 +4,7 @@ import { useMemo } from 'react'
 import { ACCEPTANCE_LEVEL, CONVERTIBLE_ELEMENTS } from '../constants'
 import type { CharacterProps, ImaginariumDataType } from '../types'
 import CharDisplay from './CharDisplay'
+import { useTranslation } from 'react-i18next'
 
 const notTravelerOrManekinFilter = (character: CharacterProps) =>
   !['Traveler', 'Manekin', 'Manekina'].includes(character.name)
@@ -13,6 +14,7 @@ interface Props {
   characters: CharacterProps[]
 }
 const EligibilityDisplay = ({ seasonData, characters }: Props) => {
+  const { t } = useTranslation()
   const { traveler, starters, eligibles, upgradables, totalEligible } = useMemo(() => {
     if (!seasonData || characters.length === 0)
       return {
@@ -63,13 +65,13 @@ const EligibilityDisplay = ({ seasonData, characters }: Props) => {
   return (
     <>
       <Typography variant='overline' component='p' sx={{ fontSize: '1rem' }}>
-        Selectable{' '}
+        {t('output.selectable.title')}{' '}
         <Typography variant='h5' component='span'>
           {totalEligible}
         </Typography>
       </Typography>
       <Typography variant='overline'>
-        Traveler{' '}
+        {t('output.traveler.title')}{' '}
         <Typography variant='h5' component='span'>
           {traveler.eligible ? 1 : 0}
         </Typography>
@@ -80,7 +82,7 @@ const EligibilityDisplay = ({ seasonData, characters }: Props) => {
         {traveler.shouldResonate && (
           <>
             <Typography component='span' color='warning'>
-              resonate towards{' '}
+              {t('output.needResonate')}{' '}
             </Typography>
             <Grid container spacing={1} alignItems='center'>
               {traveler.resonatableElements.map((element) => (
@@ -91,7 +93,7 @@ const EligibilityDisplay = ({ seasonData, characters }: Props) => {
         )}
       </Grid>
       <Typography variant='overline'>
-        Starters{' '}
+        {t('output.starters.title')}{' '}
         <Typography variant='h5' component='span'>
           {seasonData?.starting_characters.length}
         </Typography>
@@ -107,7 +109,7 @@ const EligibilityDisplay = ({ seasonData, characters }: Props) => {
         ))}
       </Grid>
       <Typography variant='overline'>
-        Eligible{' '}
+        {t('output.eligible.title')}{' '}
         <Typography variant='h5' component='span'>
           {eligibles.length}
         </Typography>
@@ -120,7 +122,7 @@ const EligibilityDisplay = ({ seasonData, characters }: Props) => {
         ))}
       </Grid>
       <Typography variant='overline' component='p' sx={{ fontSize: '1rem' }} color='error'>
-        Not Selectable{' '}
+        {t('output.notSelectable.title')}{' '}
         <Typography variant='h5' component='span'>
           {upgradables.length}
         </Typography>

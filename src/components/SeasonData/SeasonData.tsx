@@ -3,6 +3,7 @@ import useCustomDataStore from '../../stores/useCustomDataStore'
 import type { ImaginariumDataType, PresetDataType } from '../../types'
 import CustomData from './CustomData'
 import PresetData from './PresetData'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   isUsePresetData: boolean
@@ -20,6 +21,7 @@ const SeasonData = ({
   selectedPresetData,
   onApplyCustomData
 }: Props) => {
+  const { t } = useTranslation()
   const { elements, characters, specialGuests } = useCustomDataStore()
 
   const applyCustomData = () => {
@@ -44,8 +46,8 @@ const SeasonData = ({
             }
           }}
         >
-          <FormControlLabel value='preset' control={<Radio />} label='Preset data' />
-          <FormControlLabel value='custom' control={<Radio />} label='Custom data' />
+          <FormControlLabel value='preset' control={<Radio />} label={t('input.theaterSetupType.preset')} />
+          <FormControlLabel value='custom' control={<Radio />} label={t('input.theaterSetupType.custom')} />
         </RadioGroup>
       </Grid>
       <Grid size={12}>

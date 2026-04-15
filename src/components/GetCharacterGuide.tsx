@@ -9,29 +9,25 @@ import {
   ListItemText,
   Typography
 } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 
-const howToGetCharacters = [
-  'Open Battle Chronicle from Hoyolab',
-  'Open the Developer Tools on your browser',
-  'Scroll to "My Characters" section, click on "All characters"',
-  'On Developer Tools, go to Network tab and find the request "POST https://sg-public-api.hoyolab.com/event/game_record/genshin/api/character/list"',
-  'Copy the response of that request into the input below'
-]
+const GUIDE_STEP = 5
 
 const GetCharacterGuide = () => {
+  const { t } = useTranslation()
   return (
     <Accordion>
       <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls='panel1-content' id='panel1-header'>
-        <Typography component='span'>How to get character data (browser only)</Typography>
+        <Typography component='span'>{t('guide.title')}</Typography>
       </AccordionSummary>
       <AccordionDetails>
         <List>
-          {howToGetCharacters.map((text) => (
-            <ListItem disablePadding key={text}>
+          {Array.from({ length: GUIDE_STEP }).map((_value, index) => (
+            <ListItem disablePadding key={`guide-${index}`}>
               <ListItemIcon>
                 <ChevronRightIcon />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={t(`guide.step.${1 + index}`)} />
             </ListItem>
           ))}
         </List>
