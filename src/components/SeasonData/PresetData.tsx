@@ -3,6 +3,7 @@ import presetDataAsset from '../../assets/preset_data.json'
 import type { PresetDataType } from '../../types'
 import CharDisplay from '../CharDisplay'
 import ElementDisplay from '../ElementDisplay'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   presetName?: string
@@ -10,16 +11,16 @@ interface Props {
   selectedPresetData?: PresetDataType
 }
 const PresetData = ({ presetName, setPresetName, selectedPresetData }: Props) => {
+  const { t } = useTranslation()
   return (
     <>
       <TextField
         select
         fullWidth
         variant='outlined'
-        label='Select Preset data'
+        label={t('input.presetSelect.placeholder')}
         multiline
         rows={4}
-        placeholder='Preset data'
         value={presetName}
         onChange={(e) => setPresetName(e.target.value)}
       >
@@ -31,7 +32,7 @@ const PresetData = ({ presetName, setPresetName, selectedPresetData }: Props) =>
       </TextField>
       {selectedPresetData && (
         <>
-          <Typography variant='overline'>Elements</Typography>
+          <Typography variant='overline'>{t('input.setup.elements')}</Typography>
           <Grid container spacing={1}>
             {selectedPresetData.elements.map((e) => (
               <Grid key={e}>
@@ -39,7 +40,7 @@ const PresetData = ({ presetName, setPresetName, selectedPresetData }: Props) =>
               </Grid>
             ))}
           </Grid>
-          <Typography variant='overline'>Starting Characters</Typography>
+          <Typography variant='overline'>{t('input.setup.starters')}</Typography>
           <Grid container spacing={1}>
             {selectedPresetData.starting_characters.map((c) => (
               <Grid key={c}>
@@ -47,7 +48,7 @@ const PresetData = ({ presetName, setPresetName, selectedPresetData }: Props) =>
               </Grid>
             ))}
           </Grid>
-          <Typography variant='overline'>Special Guests</Typography>
+          <Typography variant='overline'>{t('input.setup.specialGuests')}</Typography>
           <Grid container spacing={1}>
             {selectedPresetData.special_characters.map((c) => (
               <Grid key={c}>

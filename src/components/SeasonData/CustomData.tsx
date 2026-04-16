@@ -22,11 +22,13 @@ import useCustomDataStore from '../../stores/useCustomDataStore'
 import type { CharacterBasicInfoProps, CharacterName, ElementType } from '../../types'
 import CharDisplay from '../CharDisplay'
 import ElementDisplay from '../ElementDisplay'
+import { Trans, useTranslation } from 'react-i18next'
 
 interface Props {
   applyCustomData: () => void
 }
 const CustomData = ({ applyCustomData }: Props) => {
+  const { t } = useTranslation()
   const { elements, characters, specialGuests, setElements, setCharacters, setSpecialGuests, isApplied, setIsApplied } =
     useCustomDataStore()
 
@@ -93,13 +95,13 @@ const CustomData = ({ applyCustomData }: Props) => {
   return (
     <>
       <FormControl fullWidth>
-        <InputLabel id='select-elements'>Select elements</InputLabel>
+        <InputLabel id='select-elements'>{t('input.setup.selectElements.placeholder')}</InputLabel>
         <Select
           value={elements}
           onChange={handleSelectElements}
           multiple
           labelId='select-elements'
-          label='Select elements'
+          label={t('input.setup.selectElements.placeholder')}
           renderValue={(value) => {
             return (
               <Grid container spacing={1}>
@@ -132,19 +134,21 @@ const CustomData = ({ applyCustomData }: Props) => {
           ))}
         </Select>
         <FormHelperText>
-          Please select <b>3</b> elements (current: {elements.length})
+          <Trans t={t} count={elements.length} i18nKey={'input.setup.selectElements.helper'}>
+            <b>3</b>
+          </Trans>
         </FormHelperText>
       </FormControl>
       {elements.length === CUSTOM_DATA_MAX_ELEMENTS && (
         <>
           <FormControl fullWidth sx={{ marginTop: 2 }}>
-            <InputLabel id='select-characters'>Select starting characters</InputLabel>
+            <InputLabel id='select-characters'>{t('input.setup.selectStartingCharacters.placeholder')}</InputLabel>
             <Select
               value={characters}
               onChange={handleSelectCharacters}
               multiple
               labelId='select-characters'
-              label='Select starting characters'
+              label={t('input.setup.selectStartingCharacters.placeholder')}
               renderValue={(value) => {
                 return (
                   <Grid container spacing={1}>
@@ -173,17 +177,20 @@ const CustomData = ({ applyCustomData }: Props) => {
               ))}
             </Select>
             <FormHelperText>
-              Please select <b>6</b> characters in total, <b>2</b> for each element (current: {characters.length})
+              <Trans t={t} count={characters.length} i18nKey={'input.setup.selectStartingCharacters.helper'}>
+                <b></b>
+                <b></b>
+              </Trans>
             </FormHelperText>
           </FormControl>
           <FormControl fullWidth sx={{ marginTop: 2 }}>
-            <InputLabel id='select-guests'>Select special guests</InputLabel>
+            <InputLabel id='select-guests'>{t('input.setup.selectSpecialGuests.placeholder')}</InputLabel>
             <Select
               value={specialGuests}
               onChange={handleSelectSpecialGuests}
               multiple
               labelId='select-guests'
-              label='Select special guests'
+              label={t('input.setup.selectSpecialGuests.placeholder')}
               renderValue={(value) => {
                 return (
                   <Grid container spacing={1}>
@@ -210,7 +217,9 @@ const CustomData = ({ applyCustomData }: Props) => {
               ))}
             </Select>
             <FormHelperText>
-              Please select <b>4</b> special guests (current: {specialGuests.length})
+              <Trans t={t} count={specialGuests.length} i18nKey={'input.setup.selectSpecialGuests.helper'}>
+                <b></b>
+              </Trans>
             </FormHelperText>
           </FormControl>
         </>
@@ -226,7 +235,7 @@ const CustomData = ({ applyCustomData }: Props) => {
             }
             onClick={handleApplyCustomData}
           >
-            {isApplied ? 'Applied' : 'Apply custom data'}
+            {t(isApplied ? 'input.setup.applyBtn.applied' : 'input.setup.applyBtn.normal')}
           </Button>
         </Grid>
       </FormControl>

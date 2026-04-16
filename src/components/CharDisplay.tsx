@@ -1,6 +1,7 @@
 import type { CharacterProps } from '../types'
 import list from '../assets/character_details.json'
 import { Avatar, Box, Typography } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   char: Partial<CharacterProps>
@@ -8,6 +9,7 @@ interface Props {
   width?: number
 }
 const CharDisplay = ({ char, isTrial = false, width = 100 }: Props) => {
+  const { t } = useTranslation()
   const detail = list.find((c) => c.name === char.name)
 
   if (!detail) return null
@@ -51,7 +53,7 @@ const CharDisplay = ({ char, isTrial = false, width = 100 }: Props) => {
               color: '#FFF'
             }}
           >
-            Trial
+            {t('output.character.isTrial')}
           </Box>
         )}
         {Boolean(!isTrial && char?.actived_constellation_num && char.actived_constellation_num > 0) && (
@@ -73,8 +75,11 @@ const CharDisplay = ({ char, isTrial = false, width = 100 }: Props) => {
         )}
       </Box>
       {Boolean(isTrial || char?.level) && (
-        <Typography variant='subtitle1' sx={{ fontSize: '0.75rem', width: '100%', textAlign: 'center', lineHeight: 1.5 }}>
-          Level {isTrial ? 90 : char?.level}
+        <Typography
+          variant='subtitle1'
+          sx={{ fontSize: '0.75rem', width: '100%', textAlign: 'center', lineHeight: 1.5 }}
+        >
+          {t('output.character.level')} {isTrial ? 90 : char?.level}
         </Typography>
       )}
     </Box>

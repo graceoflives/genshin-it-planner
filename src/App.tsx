@@ -11,10 +11,12 @@ import useTheaterSetup from './hooks/useTheaterSetup'
 import useCharacterStore from './stores/useCharacterStore'
 import type { ImaginariumDataType, PresetDataType } from './types'
 
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import '@fontsource/roboto/300.css'
+import '@fontsource/roboto/400.css'
+import '@fontsource/roboto/500.css'
+import '@fontsource/roboto/700.css'
+import { useTranslation } from 'react-i18next'
+import SelectLanguage from './components/SelectLanguage'
 
 const renderEndAdornment = (inputState: string) => {
   if (inputState === 'error') {
@@ -34,6 +36,7 @@ const renderEndAdornment = (inputState: string) => {
   return null
 }
 function App() {
+  const { t } = useTranslation()
   const { inputState, inputMsg, rawCharacterData, setRawCharacterData } = useCharacterData()
   const { isUsePresetData, setIsUsePresetData, presetName, setPresetName, customData, setCustomData } =
     useTheaterSetup()
@@ -59,17 +62,19 @@ function App() {
         <Grid container spacing={2}>
           <Grid size={8}>
             <Grid container spacing={2}>
-              <Grid size={12}>
+              <Grid size={4}>
+                <SelectLanguage />
+              </Grid>
+              <Grid size={8}>
                 <GetCharacterGuide />
               </Grid>
               <Grid size={12}>
                 <TextField
                   fullWidth
                   variant='outlined'
-                  label='Character data'
+                  label={t('input.characterData.placeholder')}
                   multiline
                   rows={4}
-                  placeholder='Character data'
                   value={rawCharacterData}
                   onChange={(e) => setRawCharacterData(e.target.value)}
                   slotProps={{
