@@ -3,36 +3,64 @@ import { useTranslation } from 'react-i18next'
 
 const languageOptions = [
   {
+    value: 'zh-CN',
+    label: '🇨🇳 简体中文'
+  },
+  {
+    value: 'zh-TW',
+    label: '🇨🇳 傳統中文',
+  },
+  {
     value: 'en-US',
     label: '🇺🇸 English'
   },
   {
-    value: 'zh-CN',
-    label: '🇨🇳 中文（简体）'
+    value: 'ko-KR',
+    label: '🇰🇷 한국어'
   },
   {
     value: 'ja-JP',
     label: '🇯🇵 日本語'
   },
   {
+    value: 'es-ES',
+    label: '🇪🇸 Español'
+  },
+  {
     value: 'fr-FR',
     label: '🇫🇷 Français'
+  },
+  {
+    value: 'ru-RU',
+    label: '🇷🇺 Русский язык'
+  },
+  {
+    value: 'th-TH',
+    label: '🇹🇭 ภาษาไทย'
+  },
+  {
+    value: 'vi-VN',
+    label: '🇻🇳 Tiếng Việt'
   },
   {
     value: 'de-DE',
     label: '🇩🇪 Deutsch'
   },
   {
-    value: 'es-ES',
-    label: '🇪🇸 Español'
+    value: 'id-ID',
+    label: '🇮🇩 Bahasa Indonesia'
   },
   {
-    value: 'ru-RU',
-    label: '🇷🇺 Русский'
+    value: 'pt-BR',
+    label: '🇧🇷 Português'
   },
   {
-    value: 'vi-VN',
-    label: '🇻🇳 Tiếng Việt'
+    value: 'tr-TR',
+    label: '🇹🇷 Türkçe'
+  },
+  {
+    value: 'it-IT',
+    label: '🇮🇹 Italiano'
   }
 ]
 const SelectLanguage = () => {
