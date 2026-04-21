@@ -17,8 +17,17 @@ const GetCharacterGuide = () => {
   const { t } = useTranslation()
   return (
     <Accordion>
-      <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls='panel1-content' id='panel1-header'>
-        <Typography component='span'>{t('guide.title')}</Typography>
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls='panel1-content'
+        id='panel1-header'
+        sx={{
+          '& .MuiAccordionSummary-content': {
+            overflow: 'hidden'
+          }
+        }}
+      >
+        <Typography noWrap>{t('guide.title')}</Typography>
       </AccordionSummary>
       <AccordionDetails>
         <List>
