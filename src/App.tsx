@@ -37,10 +37,10 @@ function App() {
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2}>
+        <Grid container spacing={1}>
           <Grid size={{ sm: 12, md: 8, lg: 9 }}>
-            <Grid container spacing={1} size={12}>
-              <Grid container alignItems='center' size={12} spacing={1}>
+            <Grid container columnSpacing={1} size={12}>
+              <Grid container alignItems='center' size={12}>
                 <Grid size='auto'>
                   <SelectLanguage />
                 </Grid>
