@@ -23,6 +23,7 @@ const PresetData = ({ presetName, setPresetName, selectedPresetData }: Props) =>
         rows={4}
         value={presetName}
         onChange={(e) => setPresetName(e.target.value)}
+        size='small'
       >
         {presetDataAsset.map((itData) => (
           <MenuItem key={itData.name} value={itData.name}>

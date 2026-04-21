@@ -22,6 +22,7 @@ const UserDataInput = () => {
       }}
       helperText={inputMsg ? inputMsg : null}
       color={inputState === 'success' ? 'success' : inputState === 'default' ? 'primary' : 'error'}
+      size='small'
     />
   )
 }
