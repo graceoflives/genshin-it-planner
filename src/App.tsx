@@ -1,4 +1,4 @@
-import { Box, Grid } from '@mui/material'
+import { Box, CssBaseline, Grid, IconButton, ThemeProvider, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import './App.css'
 import presetDataAsset from './assets/preset_data.json'
@@ -7,6 +7,7 @@ import { SeasonData } from './components/SeasonData'
 import SelectLanguage from './components/SelectLanguage'
 import UserDataInput from './components/UserDataInput'
 import useTheaterSetup from './hooks/useTheaterSetup'
+import useTheme from './hooks/useTheme'
 import useCharacterStore from './stores/useCharacterStore'
 import type { ImaginariumDataType, PresetDataType } from './types'
 
@@ -16,6 +17,7 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 
 function App() {
+  const { mode, theme, toggleMode } = useTheme()
   const { isUsePresetData, setIsUsePresetData, presetName, setPresetName, customData, setCustomData } =
     useTheaterSetup()
   const onApplyCustomData = (data: ImaginariumDataType) => {
@@ -35,37 +37,45 @@ function App() {
   }, [isUsePresetData, selectedPresetData, customData])
 
   return (
-    <>
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={1}>
-          <Grid size={{ sm: 12, md: 8, lg: 9 }}>
-            <Grid container columnSpacing={1} size={12}>
-              <Grid container alignItems='center' size={12}>
-                <Grid size='auto'>
-                  <SelectLanguage />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box sx={{ flexGrow: 1, minHeight: '100vh', bgcolor: 'background.default', padding: 1 }}>
+        <Box sx={{ maxWidth: '1440px', margin: '0 auto' }}>
+          <Grid container spacing={1}>
+            <Grid size={{ sm: 12, md: 8, lg: 9 }}>
+              <Grid container columnSpacing={1} size={12}>
+                <Grid container alignItems='center' size={12}>
+                  <Grid size='auto'>
+                    <IconButton onClick={() => toggleMode()}>
+                      <Typography>{mode === 'dark' ? '☀️' : '🌙'}</Typography>
+                    </IconButton>
+                  </Grid>
+                  <Grid size='auto'>
+                    <SelectLanguage />
+                  </Grid>
+                  <Grid size='grow'>
+                    <UserDataInput />
+                  </Grid>
                 </Grid>
-                <Grid size='grow'>
-                  <UserDataInput />
+                <Grid size={12}>
+                  <EligibilityDisplay seasonData={selectedData} characters={characters} />
                 </Grid>
-              </Grid>
-              <Grid size={12}>
-                <EligibilityDisplay seasonData={selectedData} characters={characters} />
               </Grid>
             </Grid>
+            <Grid size={{ sm: 12, md: 4, lg: 3 }}>
+              <SeasonData
+                isUsePresetData={isUsePresetData}
+                setIsUsePresetData={setIsUsePresetData}
+                presetName={presetName}
+                setPresetName={setPresetName}
+                selectedPresetData={selectedPresetData}
+                onApplyCustomData={onApplyCustomData}
+              />
+            </Grid>
           </Grid>
-          <Grid size={{ sm: 12, md: 4, lg: 3 }}>
-            <SeasonData
-              isUsePresetData={isUsePresetData}
-              setIsUsePresetData={setIsUsePresetData}
-              presetName={presetName}
-              setPresetName={setPresetName}
-              selectedPresetData={selectedPresetData}
-              onApplyCustomData={onApplyCustomData}
-            />
-          </Grid>
-        </Grid>
+        </Box>
       </Box>
-    </>
+    </ThemeProvider>
   )
 }
 
