@@ -1,12 +1,11 @@
-import { Check as CheckIcon, Clear as ClearIcon } from '@mui/icons-material'
-import { Box, Grid, InputAdornment, TextField } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import { useMemo } from 'react'
 import './App.css'
 import presetDataAsset from './assets/preset_data.json'
 import EligibilityDisplay from './components/EligibilityDisplay'
-import GetCharacterGuide from './components/GetCharacterGuide'
 import { SeasonData } from './components/SeasonData'
-import useCharacterData from './hooks/useCharacterData'
+import SelectLanguage from './components/SelectLanguage'
+import UserDataInput from './components/UserDataInput'
 import useTheaterSetup from './hooks/useTheaterSetup'
 import useCharacterStore from './stores/useCharacterStore'
 import type { ImaginariumDataType, PresetDataType } from './types'
@@ -15,29 +14,8 @@ import '@fontsource/roboto/300.css'
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
-import { useTranslation } from 'react-i18next'
-import SelectLanguage from './components/SelectLanguage'
 
-const renderEndAdornment = (inputState: string) => {
-  if (inputState === 'error') {
-    return (
-      <InputAdornment position='end'>
-        <ClearIcon color='error' />
-      </InputAdornment>
-    )
-  }
-  if (inputState === 'success') {
-    return (
-      <InputAdornment position='end'>
-        <CheckIcon color='success' />
-      </InputAdornment>
-    )
-  }
-  return null
-}
 function App() {
-  const { t } = useTranslation()
-  const { inputState, inputMsg, rawCharacterData, setRawCharacterData } = useCharacterData()
   const { isUsePresetData, setIsUsePresetData, presetName, setPresetName, customData, setCustomData } =
     useTheaterSetup()
   const onApplyCustomData = (data: ImaginariumDataType) => {
@@ -60,38 +38,22 @@ function App() {
     <>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
-          <Grid size={8}>
-            <Grid container spacing={2}>
-              <Grid size={4}>
-                <SelectLanguage />
-              </Grid>
-              <Grid size={8}>
-                <GetCharacterGuide />
-              </Grid>
-              <Grid size={12}>
-                <TextField
-                  fullWidth
-                  variant='outlined'
-                  label={t('input.characterData.placeholder')}
-                  multiline
-                  rows={4}
-                  value={rawCharacterData}
-                  onChange={(e) => setRawCharacterData(e.target.value)}
-                  slotProps={{
-                    input: {
-                      endAdornment: renderEndAdornment(inputState)
-                    }
-                  }}
-                  helperText={inputMsg ? inputMsg : null}
-                  color={inputState === 'success' ? 'success' : inputState === 'default' ? 'primary' : 'error'}
-                />
+          <Grid size={{ sm: 12, md: 8, lg: 9 }}>
+            <Grid container spacing={1} size={12}>
+              <Grid container alignItems='center' size={12} spacing={1}>
+                <Grid size='auto'>
+                  <SelectLanguage />
+                </Grid>
+                <Grid size='grow'>
+                  <UserDataInput />
+                </Grid>
               </Grid>
               <Grid size={12}>
                 <EligibilityDisplay seasonData={selectedData} characters={characters} />
               </Grid>
             </Grid>
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ sm: 12, md: 4, lg: 3 }}>
             <SeasonData
               isUsePresetData={isUsePresetData}
               setIsUsePresetData={setIsUsePresetData}

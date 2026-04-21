@@ -8,7 +8,7 @@ const languageOptions = [
   },
   {
     value: 'zh-TW',
-    label: '🇨🇳 傳統中文',
+    label: '🇨🇳 傳統中文'
   },
   {
     value: 'en-US',
