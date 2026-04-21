@@ -1,9 +1,9 @@
 import { FormControlLabel, Grid, Radio, RadioGroup } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 import useCustomDataStore from '../../stores/useCustomDataStore'
 import type { ImaginariumDataType, PresetDataType } from '../../types'
 import CustomData from './CustomData'
 import PresetData from './PresetData'
-import { useTranslation } from 'react-i18next'
 
 interface Props {
   isUsePresetData: boolean
@@ -33,7 +33,7 @@ const SeasonData = ({
     onApplyCustomData?.(customData)
   }
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={1}>
       <Grid size={12}>
         <RadioGroup
           row

@@ -8,7 +8,7 @@ const languageOptions = [
   },
   {
     value: 'zh-TW',
-    label: '🇨🇳 傳統中文',
+    label: '🇨🇳 傳統中文'
   },
   {
     value: 'en-US',
@@ -69,7 +69,7 @@ const SelectLanguage = () => {
     i18n.changeLanguage(e.target.value)
   }
   return (
-    <FormControl fullWidth>
+    <FormControl fullWidth size={'small'}>
       <InputLabel id='select-language'>{t('language.select.placeholder')}</InputLabel>
       <Select
         value={i18n.language}

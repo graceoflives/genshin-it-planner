@@ -94,7 +94,7 @@ const CustomData = ({ applyCustomData }: Props) => {
 
   return (
     <>
-      <FormControl fullWidth>
+      <FormControl fullWidth size='small'>
         <InputLabel id='select-elements'>{t('input.setup.selectElements.placeholder')}</InputLabel>
         <Select
           value={elements}
@@ -104,11 +104,9 @@ const CustomData = ({ applyCustomData }: Props) => {
           label={t('input.setup.selectElements.placeholder')}
           renderValue={(value) => {
             return (
-              <Grid container spacing={1}>
+              <Grid container columnSpacing={1}>
                 {value.map((element) => (
-                  <Grid key={element}>
-                    <ElementDisplay element={element} />
-                  </Grid>
+                  <ElementDisplay key={element} element={element} />
                 ))}
               </Grid>
             )
@@ -141,7 +139,7 @@ const CustomData = ({ applyCustomData }: Props) => {
       </FormControl>
       {elements.length === CUSTOM_DATA_MAX_ELEMENTS && (
         <>
-          <FormControl fullWidth sx={{ marginTop: 2 }}>
+          <FormControl fullWidth sx={{ marginTop: 2 }} size='small'>
             <InputLabel id='select-characters'>{t('input.setup.selectStartingCharacters.placeholder')}</InputLabel>
             <Select
               value={characters}
@@ -183,7 +181,7 @@ const CustomData = ({ applyCustomData }: Props) => {
               </Trans>
             </FormHelperText>
           </FormControl>
-          <FormControl fullWidth sx={{ marginTop: 2 }}>
+          <FormControl fullWidth sx={{ marginTop: 2 }} size='small'>
             <InputLabel id='select-guests'>{t('input.setup.selectSpecialGuests.placeholder')}</InputLabel>
             <Select
               value={specialGuests}
