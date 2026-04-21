@@ -1,4 +1,4 @@
-import { Box, CssBaseline, Grid, Switch, ThemeProvider } from '@mui/material'
+import { Box, CssBaseline, Grid, IconButton, ThemeProvider, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import './App.css'
 import presetDataAsset from './assets/preset_data.json'
@@ -46,7 +46,9 @@ function App() {
               <Grid container columnSpacing={1} size={12}>
                 <Grid container alignItems='center' size={12}>
                   <Grid size='auto'>
-                    <Switch checked={mode === 'dark'} onChange={() => toggleMode()} /> Dark mode
+                    <IconButton onClick={() => toggleMode()}>
+                      <Typography>{mode === 'dark' ? '☀️' : '🌙'}</Typography>
+                    </IconButton>
                   </Grid>
                   <Grid size='auto'>
                     <SelectLanguage />
