@@ -42,31 +42,29 @@ function App() {
       <Box sx={{ flexGrow: 1, minHeight: '100vh', bgcolor: 'background.default', padding: 1 }}>
         <Box sx={{ maxWidth: '1440px', margin: '0 auto' }}>
           <Grid container spacing={1}>
-            <Grid size={{ sm: 12, md: 4, lg: 3 }}>
-              <Grid container spacing={1} size={12}>
-                <Grid container alignItems='center' size={12}>
-                  <Grid size='auto'>
-                    <IconButton onClick={() => toggleMode()}>
-                      <Typography>{mode === 'dark' ? '☀️' : '🌙'}</Typography>
-                    </IconButton>
-                  </Grid>
-                  <Grid size='grow'>
-                    <SelectLanguage />
-                  </Grid>
+            <Grid container rowSpacing={1} size={{ sm: 12, md: 4, lg: 3 }} direction={'column'}>
+              <Grid container alignItems='center' size={12}>
+                <Grid size='auto'>
+                  <IconButton onClick={() => toggleMode()}>
+                    <Typography>{mode === 'dark' ? '☀️' : '🌙'}</Typography>
+                  </IconButton>
                 </Grid>
-                <Grid size={12}>
-                  <UserDataInput />
+                <Grid size='grow'>
+                  <SelectLanguage />
                 </Grid>
-                <Grid size={12}>
-                  <SeasonData
-                    isUsePresetData={isUsePresetData}
-                    setIsUsePresetData={setIsUsePresetData}
-                    presetName={presetName}
-                    setPresetName={setPresetName}
-                    selectedPresetData={selectedPresetData}
-                    onApplyCustomData={onApplyCustomData}
-                  />
-                </Grid>
+              </Grid>
+              <Grid size={12}>
+                <UserDataInput />
+              </Grid>
+              <Grid size={12}>
+                <SeasonData
+                  isUsePresetData={isUsePresetData}
+                  setIsUsePresetData={setIsUsePresetData}
+                  presetName={presetName}
+                  setPresetName={setPresetName}
+                  selectedPresetData={selectedPresetData}
+                  onApplyCustomData={onApplyCustomData}
+                />
               </Grid>
             </Grid>
             <Grid size={{ sm: 12, md: 8, lg: 9 }}>

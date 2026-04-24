@@ -1,4 +1,4 @@
-import { FormControlLabel, Grid, Radio, RadioGroup } from '@mui/material'
+import { Grid, ToggleButton, ToggleButtonGroup } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import useCustomDataStore from '../../stores/useCustomDataStore'
 import type { ImaginariumDataType, PresetDataType } from '../../types'
@@ -33,22 +33,29 @@ const SeasonData = ({
     onApplyCustomData?.(customData)
   }
   return (
-    <Grid container spacing={1}>
+    <Grid container rowSpacing={2}>
       <Grid size={12}>
-        <RadioGroup
-          row
+        <ToggleButtonGroup
+          color='primary'
           value={isUsePresetData ? 'preset' : 'custom'}
-          onChange={(e) => {
-            if (e.target.value === 'preset') {
+          onChange={(_e, newValue) => {
+            if (newValue === 'preset') {
               setIsUsePresetData(true)
             } else {
               setIsUsePresetData(false)
             }
           }}
+          exclusive
+          fullWidth
+          size='small'
         >
-          <FormControlLabel value='preset' control={<Radio />} label={t('input.theaterSetupType.preset')} />
-          <FormControlLabel value='custom' control={<Radio />} label={t('input.theaterSetupType.custom')} />
-        </RadioGroup>
+          <ToggleButton value='preset' aria-label='Preset'>
+            {t('input.theaterSetupType.preset')}
+          </ToggleButton>
+          <ToggleButton value='custom' aria-label='Custom'>
+            {t('input.theaterSetupType.custom')}
+          </ToggleButton>
+        </ToggleButtonGroup>
       </Grid>
       <Grid size={12}>
         {isUsePresetData ? (
