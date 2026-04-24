@@ -223,7 +223,7 @@ const CustomData = ({ applyCustomData }: Props) => {
         </>
       )}
       <FormControl fullWidth sx={{ marginTop: 2 }}>
-        <Grid container sx={{ justifyContent: 'flex-end' }}>
+        <Grid>
           <Button
             variant='contained'
             disabled={

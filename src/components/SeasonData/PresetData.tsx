@@ -45,7 +45,7 @@ const PresetData = ({ presetName, setPresetName, selectedPresetData }: Props) =>
           <Grid container spacing={1}>
             {selectedPresetData.starting_characters.map((c) => (
               <Grid key={c}>
-                <CharDisplay char={{ name: c }} />
+                <CharDisplay char={{ name: c }} width={50} />
               </Grid>
             ))}
           </Grid>
@@ -53,7 +53,7 @@ const PresetData = ({ presetName, setPresetName, selectedPresetData }: Props) =>
           <Grid container spacing={1}>
             {selectedPresetData.special_characters.map((c) => (
               <Grid key={c}>
-                <CharDisplay char={{ name: c }} />
+                <CharDisplay char={{ name: c }} width={50} />
               </Grid>
             ))}
           </Grid>
