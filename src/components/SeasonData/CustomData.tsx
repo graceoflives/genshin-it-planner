@@ -126,7 +126,7 @@ const CustomData = ({ applyCustomData }: Props) => {
                 }}
               >
                 <ElementDisplay element={element} />
-                <Typography variant='body1'>{element}</Typography>
+                <Typography variant='body1'>{t(`element.${element}`)}</Typography>
               </Grid>
             </MenuItem>
           ))}
