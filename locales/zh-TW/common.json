@@ -22,11 +22,18 @@
   "input.setup.starters": "初始角色",
   "input.setup.specialGuests": "特別嘉賓",
   "input.setup.selectElements.placeholder": "選擇元素",
-  "input.setup.selectElements.helper": "請選擇 <0>3</0> 種元素（目前：{{count}}）",
+  "input.setup.selectElements.helper": "請選擇 <0>{{maxCount}}</0> 種元素（目前：{{currentCount}}）",
   "input.setup.selectStartingCharacters.placeholder": "選擇初始角色",
-  "input.setup.selectStartingCharacters.helper": "請共選擇 <0>6</0> 名角色，每種元素 <1>2</1> 名（目前：{{count}}）",
+  "input.setup.selectStartingCharacters.helper": "請共選擇 <0>{{maxCount}}</0> 名角色，每種元素 <1>{{eachCount}}</1> 名（目前：{{currentCount}}）",
   "input.setup.selectSpecialGuests.placeholder": "選擇特別嘉賓",
-  "input.setup.selectSpecialGuests.helper": "請選擇 <0>4</0> 名特別嘉賓（目前：{{count}}）",
+  "input.setup.selectSpecialGuests.helper": "請選擇 <0>{{maxCount}}</0> 名特別嘉賓（目前：{{currentCount}}）",
   "input.setup.applyBtn.normal": "套用自訂配置",
-  "input.setup.applyBtn.applied": "已套用"
+  "input.setup.applyBtn.applied": "已套用",
+  "element.Anemo": "風",
+  "element.Cryo": "冰",
+  "element.Dendro": "草",
+  "element.Electro": "雷",
+  "element.Geo": "岩",
+  "element.Hydro": "水",
+  "element.Pyro": "火"
 }

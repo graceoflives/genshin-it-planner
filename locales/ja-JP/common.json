@@ -22,11 +22,18 @@
   "input.setup.starters": "スターターキャラクター",
   "input.setup.specialGuests": "スペシャルゲスト",
   "input.setup.selectElements.placeholder": "元素を選択",
-  "input.setup.selectElements.helper": "<0>3</0>つの元素を選択してください（現在：{{count}}）",
+  "input.setup.selectElements.helper": "<0>{{maxCount}}</0>つの元素を選択してください（現在：{{currentCount}}）",
   "input.setup.selectStartingCharacters.placeholder": "スターターキャラクターを選択",
-  "input.setup.selectStartingCharacters.helper": "合計<0>6</0>人のキャラクターを選択し、各元素につき<1>2</1>人ずつ選んでください（現在：{{count}}）",
+  "input.setup.selectStartingCharacters.helper": "合計<0>{{maxCount}}</0>人のキャラクターを選択し、各元素につき<1>{{eachCount}}</1>人ずつ選んでください（現在：{{currentCount}}）",
   "input.setup.selectSpecialGuests.placeholder": "スペシャルゲストを選択",
-  "input.setup.selectSpecialGuests.helper": "<0>4</0>人のスペシャルゲストを選択してください（現在：{{count}}）",
+  "input.setup.selectSpecialGuests.helper": "<0>{{maxCount}}</0>人のスペシャルゲストを選択してください（現在：{{currentCount}}）",
   "input.setup.applyBtn.normal": "カスタム設定を適用",
-  "input.setup.applyBtn.applied": "適用済み"
+  "input.setup.applyBtn.applied": "適用済み",
+  "element.Anemo": "風",
+  "element.Cryo": "氷",
+  "element.Dendro": "草",
+  "element.Electro": "雷",
+  "element.Geo": "岩",
+  "element.Hydro": "水",
+  "element.Pyro": "炎"
 }

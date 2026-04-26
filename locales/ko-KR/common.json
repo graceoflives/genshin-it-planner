@@ -22,11 +22,18 @@
   "input.setup.starters": "시작 캐릭터",
   "input.setup.specialGuests": "특별 게스트",
   "input.setup.selectElements.placeholder": "원소 선택",
-  "input.setup.selectElements.helper": "<0>3</0>개의 원소를 선택해 주세요 (현재: {{count}})",
+  "input.setup.selectElements.helper": "<0>{{maxCount}}</0>개의 원소를 선택해 주세요 (현재: {{currentCount}})",
   "input.setup.selectStartingCharacters.placeholder": "시작 캐릭터 선택",
-  "input.setup.selectStartingCharacters.helper": "총 <0>6</0>명의 캐릭터를 선택해 주세요, 원소당 <1>2</1>명 (현재: {{count}})",
+  "input.setup.selectStartingCharacters.helper": "총 <0>{{maxCount}}</0>명의 캐릭터를 선택해 주세요, 원소당 <1>{{eachCount}}</1>명 (현재: {{currentCount}})",
   "input.setup.selectSpecialGuests.placeholder": "특별 게스트 선택",
-  "input.setup.selectSpecialGuests.helper": "<0>4</0>명의 특별 게스트를 선택해 주세요 (현재: {{count}})",
+  "input.setup.selectSpecialGuests.helper": "<0>{{maxCount}}</0>명의 특별 게스트를 선택해 주세요 (현재: {{currentCount}})",
   "input.setup.applyBtn.normal": "커스텀 설정 적용",
-  "input.setup.applyBtn.applied": "적용됨"
+  "input.setup.applyBtn.applied": "적용됨",
+  "element.Anemo": "바람",
+  "element.Cryo": "얼음",
+  "element.Dendro": "풀",
+  "element.Electro": "번개",
+  "element.Geo": "바위",
+  "element.Hydro": "물",
+  "element.Pyro": "불"
 }

@@ -22,11 +22,18 @@
   "input.setup.starters": "Nhân vật khởi đầu",
   "input.setup.specialGuests": "Khách mời đặc biệt",
   "input.setup.selectElements.placeholder": "Chọn nguyên tố",
-  "input.setup.selectElements.helper": "Vui lòng chọn <0>3</0> nguyên tố (hiện tại: {{count}})",
+  "input.setup.selectElements.helper": "Vui lòng chọn <0>{{maxCount}}</0> nguyên tố (hiện tại: {{currentCount}})",
   "input.setup.selectStartingCharacters.placeholder": "Chọn nhân vật khởi đầu",
-  "input.setup.selectStartingCharacters.helper": "Vui lòng chọn <0>6</0> nhân vật, <1>2</1> cho mỗi nguyên tố (hiện tại: {{count}})",
+  "input.setup.selectStartingCharacters.helper": "Vui lòng chọn <0>{{maxCount}}</0> nhân vật, <1>{{eachCount}}</1> cho mỗi nguyên tố (hiện tại: {{currentCount}})",
   "input.setup.selectSpecialGuests.placeholder": "Chọn khách mời đặc biệt",
-  "input.setup.selectSpecialGuests.helper": "Vui lòng chọn <0>4</0> khách mời đặc biệt (hiện tại: {{count}})",
+  "input.setup.selectSpecialGuests.helper": "Vui lòng chọn <0>{{maxCount}}</0> khách mời đặc biệt (hiện tại: {{currentCount}})",
   "input.setup.applyBtn.normal": "Áp dụng cấu hình tùy chỉnh",
-  "input.setup.applyBtn.applied": "Đã áp dụng"
+  "input.setup.applyBtn.applied": "Đã áp dụng",
+  "element.Anemo": "Phong",
+  "element.Cryo": "Băng",
+  "element.Dendro": "Thảo",
+  "element.Electro": "Lôi",
+  "element.Geo": "Nham",
+  "element.Hydro": "Thủy",
+  "element.Pyro": "Hỏa"
 }

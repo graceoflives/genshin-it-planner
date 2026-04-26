@@ -22,11 +22,18 @@
   "input.setup.starters": "Personagens iniciais",
   "input.setup.specialGuests": "Convidados especiais",
   "input.setup.selectElements.placeholder": "Selecionar elementos",
-  "input.setup.selectElements.helper": "Por favor, selecione <0>3</0> elementos (atual: {{count}})",
+  "input.setup.selectElements.helper": "Por favor, selecione <0>{{maxCount}}</0> elementos (atual: {{currentCount}})",
   "input.setup.selectStartingCharacters.placeholder": "Selecionar personagens iniciais",
-  "input.setup.selectStartingCharacters.helper": "Por favor, selecione <0>6</0> personagens no total, <1>2</1> para cada elemento (atual: {{count}})",
+  "input.setup.selectStartingCharacters.helper": "Por favor, selecione <0>{{maxCount}}</0> personagens no total, <1>{{eachCount}}</1> para cada elemento (atual: {{currentCount}})",
   "input.setup.selectSpecialGuests.placeholder": "Selecionar convidados especiais",
-  "input.setup.selectSpecialGuests.helper": "Por favor, selecione <0>4</0> convidados especiais (atual: {{count}})",
+  "input.setup.selectSpecialGuests.helper": "Por favor, selecione <0>{{maxCount}}</0> convidados especiais (atual: {{currentCount}})",
   "input.setup.applyBtn.normal": "Aplicar configuração personalizada",
-  "input.setup.applyBtn.applied": "Aplicado"
+  "input.setup.applyBtn.applied": "Aplicado",
+  "element.Anemo": "Anemo",
+  "element.Cryo": "Cryo",
+  "element.Dendro": "Dendro",
+  "element.Electro": "Electro",
+  "element.Geo": "Geo",
+  "element.Hydro": "Hydro",
+  "element.Pyro": "Pyro"
 }

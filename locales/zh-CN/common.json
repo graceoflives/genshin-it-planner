@@ -22,11 +22,18 @@
   "input.setup.starters": "初始角色",
   "input.setup.specialGuests": "特别嘉宾",
   "input.setup.selectElements.placeholder": "选择元素",
-  "input.setup.selectElements.helper": "请选择 <0>3</0> 个元素（当前：{{count}}）",
+  "input.setup.selectElements.helper": "请选择 <0>{{maxCount}}</0> 个元素（当前：{{currentCount}}）",
   "input.setup.selectStartingCharacters.placeholder": "选择初始角色",
-  "input.setup.selectStartingCharacters.helper": "请共选择 <0>6</0> 个角色，每个元素 <1>2</1> 个（当前：{{count}}）",
+  "input.setup.selectStartingCharacters.helper": "请共选择 <0>{{maxCount}}</0> 个角色，每个元素 <1>{{eachCount}}</1> 个（当前：{{currentCount}}）",
   "input.setup.selectSpecialGuests.placeholder": "选择特别嘉宾",
-  "input.setup.selectSpecialGuests.helper": "请选择 <0>4</0> 位特别嘉宾（当前：{{count}}）",
+  "input.setup.selectSpecialGuests.helper": "请选择 <0>{{maxCount}}</0> 位特别嘉宾（当前：{{currentCount}}）",
   "input.setup.applyBtn.normal": "应用自定义配置",
-  "input.setup.applyBtn.applied": "已应用"
+  "input.setup.applyBtn.applied": "已应用",
+  "element.Anemo": "风",
+  "element.Cryo": "冰",
+  "element.Dendro": "草",
+  "element.Electro": "雷",
+  "element.Geo": "岩",
+  "element.Hydro": "水",
+  "element.Pyro": "火"
 }

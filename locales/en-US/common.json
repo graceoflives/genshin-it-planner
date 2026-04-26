@@ -22,11 +22,18 @@
   "input.setup.starters": "Starting characters",
   "input.setup.specialGuests": "Special Guests",
   "input.setup.selectElements.placeholder": "Select elements",
-  "input.setup.selectElements.helper": "Please select <0>3</0> elements (current: {{count}})",
+  "input.setup.selectElements.helper": "Please select <0>{{maxCount}}</0> elements (current: {{currentCount}})",
   "input.setup.selectStartingCharacters.placeholder": "Select starting characters",
-  "input.setup.selectStartingCharacters.helper": "Please select <0>6</0> characters in total, <1>2</1> for each element (current: {{count}})",
+  "input.setup.selectStartingCharacters.helper": "Please select <0>{{maxCount}}</0> characters in total, <1>{{eachCount}}</1> for each element (current: {{currentCount}})",
   "input.setup.selectSpecialGuests.placeholder": "Select special guests",
-  "input.setup.selectSpecialGuests.helper": "Please select <0>4</0> special guests (current: {{count}})",
+  "input.setup.selectSpecialGuests.helper": "Please select <0>{{maxCount}}</0> special guests (current: {{currentCount}})",
   "input.setup.applyBtn.normal": "Apply Custom setup",
-  "input.setup.applyBtn.applied": "Applied"
+  "input.setup.applyBtn.applied": "Applied",
+  "element.Anemo": "Anemo",
+  "element.Cryo": "Cryo",
+  "element.Dendro": "Dendro",
+  "element.Electro": "Electro",
+  "element.Geo": "Geo",
+  "element.Hydro": "Hydro",
+  "element.Pyro": "Pyro"
 }
