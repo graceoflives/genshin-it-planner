@@ -22,11 +22,11 @@
   "input.setup.starters": "Personaggi iniziali",
   "input.setup.specialGuests": "Ospiti speciali",
   "input.setup.selectElements.placeholder": "Seleziona elementi",
-  "input.setup.selectElements.helper": "Seleziona <0>3</0> elementi (attuale: {{count}})",
+  "input.setup.selectElements.helper": "Seleziona <0>{{maxCount}}</0> elementi (attuale: {{currentCount}})",
   "input.setup.selectStartingCharacters.placeholder": "Seleziona personaggi iniziali",
-  "input.setup.selectStartingCharacters.helper": "Seleziona un totale di <0>6</0> personaggi, <1>2</1> per ogni elemento (attuale: {{count}})",
+  "input.setup.selectStartingCharacters.helper": "Seleziona un totale di <0>{{maxCount}}</0> personaggi, <1>{{eachCount}}</1> per ogni elemento (attuale: {{currentCount}})",
   "input.setup.selectSpecialGuests.placeholder": "Seleziona ospiti speciali",
-  "input.setup.selectSpecialGuests.helper": "Seleziona <0>4</0> ospiti speciali (attuale: {{count}})",
+  "input.setup.selectSpecialGuests.helper": "Seleziona <0>{{maxCount}}</0> ospiti speciali (attuale: {{currentCount}})",
   "input.setup.applyBtn.normal": "Applica configurazione personalizzata",
   "input.setup.applyBtn.applied": "Applicato"
 }

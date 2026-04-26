@@ -22,11 +22,11 @@
   "input.setup.starters": "Personnages de départ",
   "input.setup.specialGuests": "Invités spéciaux",
   "input.setup.selectElements.placeholder": "Sélectionner les éléments",
-  "input.setup.selectElements.helper": "Veuillez sélectionner <0>3</0> éléments (actuel : {{count}})",
+  "input.setup.selectElements.helper": "Veuillez sélectionner <0>{{maxCount}}</0> éléments (actuel : {{currentCount}})",
   "input.setup.selectStartingCharacters.placeholder": "Sélectionner les personnages de départ",
-  "input.setup.selectStartingCharacters.helper": "Veuillez sélectionner <0>6</0> personnages au total, <1>2</1> par élément (actuel : {{count}})",
+  "input.setup.selectStartingCharacters.helper": "Veuillez sélectionner <0>{{maxCount}}</0> personnages au total, <1>{{eachCount}}</1> par élément (actuel : {{currentCount}})",
   "input.setup.selectSpecialGuests.placeholder": "Sélectionner les invités spéciaux",
-  "input.setup.selectSpecialGuests.helper": "Veuillez sélectionner <0>4</0> invités spéciaux (actuel : {{count}})",
+  "input.setup.selectSpecialGuests.helper": "Veuillez sélectionner <0>{{maxCount}}</0> invités spéciaux (actuel : {{currentCount}})",
   "input.setup.applyBtn.normal": "Appliquer la configuration personnalisée",
   "input.setup.applyBtn.applied": "Appliqué"
 }

@@ -22,11 +22,11 @@
   "input.setup.starters": "Начальные персонажи",
   "input.setup.specialGuests": "Специальные гости",
   "input.setup.selectElements.placeholder": "Выберите элементы",
-  "input.setup.selectElements.helper": "Пожалуйста, выберите <0>3</0> элемента (текущее: {{count}})",
+  "input.setup.selectElements.helper": "Пожалуйста, выберите <0>{{maxCount}}</0> элемента (текущее: {{currentCount}})",
   "input.setup.selectStartingCharacters.placeholder": "Выберите начальных персонажей",
-  "input.setup.selectStartingCharacters.helper": "Пожалуйста, выберите <0>6</0> персонажей всего, <1>2</1> для каждого элемента (текущее: {{count}})",
+  "input.setup.selectStartingCharacters.helper": "Пожалуйста, выберите <0>{{maxCount}}</0> персонажей всего, <1>{{eachCount}}</1> для каждого элемента (текущее: {{currentCount}})",
   "input.setup.selectSpecialGuests.placeholder": "Выберите специальных гостей",
-  "input.setup.selectSpecialGuests.helper": "Пожалуйста, выберите <0>4</0> специальных гостей (текущее: {{count}})",
+  "input.setup.selectSpecialGuests.helper": "Пожалуйста, выберите <0>{{maxCount}}</0> специальных гостей (текущее: {{currentCount}})",
   "input.setup.applyBtn.normal": "Применить пользовательскую настройку",
   "input.setup.applyBtn.applied": "Применено"
 }

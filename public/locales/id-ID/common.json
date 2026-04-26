@@ -22,11 +22,11 @@
   "input.setup.starters": "Karakter awal",
   "input.setup.specialGuests": "Tamu spesial",
   "input.setup.selectElements.placeholder": "Pilih elemen",
-  "input.setup.selectElements.helper": "Silakan pilih <0>3</0> elemen (saat ini: {{count}})",
+  "input.setup.selectElements.helper": "Silakan pilih <0>{{maxCount}}</0> elemen (saat ini: {{currentCount}})",
   "input.setup.selectStartingCharacters.placeholder": "Pilih karakter awal",
-  "input.setup.selectStartingCharacters.helper": "Silakan pilih total <0>6</0> karakter, <1>2</1> untuk setiap elemen (saat ini: {{count}})",
+  "input.setup.selectStartingCharacters.helper": "Silakan pilih total <0>{{maxCount}}</0> karakter, <1>{{eachCount}}</1> untuk setiap elemen (saat ini: {{currentCount}})",
   "input.setup.selectSpecialGuests.placeholder": "Pilih tamu spesial",
-  "input.setup.selectSpecialGuests.helper": "Silakan pilih <0>4</0> tamu spesial (saat ini: {{count}})",
+  "input.setup.selectSpecialGuests.helper": "Silakan pilih <0>{{maxCount}}</0> tamu spesial (saat ini: {{currentCount}})",
   "input.setup.applyBtn.normal": "Terapkan pengaturan kustom",
   "input.setup.applyBtn.applied": "Diterapkan"
 }

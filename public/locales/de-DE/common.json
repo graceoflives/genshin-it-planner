@@ -22,11 +22,11 @@
   "input.setup.starters": "Startcharaktere",
   "input.setup.specialGuests": "Besondere Gäste",
   "input.setup.selectElements.placeholder": "Elemente auswählen",
-  "input.setup.selectElements.helper": "Bitte wählen Sie <0>3</0> Elemente aus (aktuell: {{count}})",
+  "input.setup.selectElements.helper": "Bitte wählen Sie <0>{{maxCount}}</0> Elemente aus (aktuell: {{currentCount}})",
   "input.setup.selectStartingCharacters.placeholder": "Startcharaktere auswählen",
-  "input.setup.selectStartingCharacters.helper": "Bitte wählen Sie insgesamt <0>6</0> Charaktere aus, <1>2</1> für jedes Element (aktuell: {{count}})",
+  "input.setup.selectStartingCharacters.helper": "Bitte wählen Sie insgesamt <0>{{maxCount}}</0> Charaktere aus, <1>{{eachCount}}</1> für jedes Element (aktuell: {{currentCount}})",
   "input.setup.selectSpecialGuests.placeholder": "Besondere Gäste auswählen",
-  "input.setup.selectSpecialGuests.helper": "Bitte wählen Sie <0>4</0> besondere Gäste aus (aktuell: {{count}})",
+  "input.setup.selectSpecialGuests.helper": "Bitte wählen Sie <0>{{maxCount}}</0> besondere Gäste aus (aktuell: {{currentCount}})",
   "input.setup.applyBtn.normal": "Benutzerdefiniertes Setup anwenden",
   "input.setup.applyBtn.applied": "Angewendet"
 }

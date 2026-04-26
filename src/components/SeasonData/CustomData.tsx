@@ -132,8 +132,15 @@ const CustomData = ({ applyCustomData }: Props) => {
           ))}
         </Select>
         <FormHelperText>
-          <Trans t={t} count={elements.length} i18nKey={'input.setup.selectElements.helper'}>
-            <b>3</b>
+          <Trans
+            t={t}
+            values={{
+              currentCount: elements.length,
+              maxCount: CUSTOM_DATA_MAX_ELEMENTS
+            }}
+            i18nKey={'input.setup.selectElements.helper'}
+          >
+            <b></b>
           </Trans>
         </FormHelperText>
       </FormControl>
@@ -175,7 +182,15 @@ const CustomData = ({ applyCustomData }: Props) => {
               ))}
             </Select>
             <FormHelperText>
-              <Trans t={t} count={characters.length} i18nKey={'input.setup.selectStartingCharacters.helper'}>
+              <Trans
+                t={t}
+                values={{
+                  currentCount: characters.length,
+                  maxCount: CUSTOM_DATA_MAX_STARTING_CHARACTERS,
+                  eachCount: CUSTOM_DATA_MAX_STARTING_CHARACTERS_PER_ELEMENT
+                }}
+                i18nKey={'input.setup.selectStartingCharacters.helper'}
+              >
                 <b></b>
                 <b></b>
               </Trans>
@@ -215,7 +230,14 @@ const CustomData = ({ applyCustomData }: Props) => {
               ))}
             </Select>
             <FormHelperText>
-              <Trans t={t} count={specialGuests.length} i18nKey={'input.setup.selectSpecialGuests.helper'}>
+              <Trans
+                t={t}
+                values={{
+                  currentCount: specialGuests.length,
+                  maxCount: CUSTOM_DATA_MAX_SPECIAL_GUESTS
+                }}
+                i18nKey={'input.setup.selectSpecialGuests.helper'}
+              >
                 <b></b>
               </Trans>
             </FormHelperText>
