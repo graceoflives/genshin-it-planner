@@ -1,10 +1,10 @@
 {
   "guide.title": "Cách lấy dữ liệu nhân vật (chỉ dành cho trình duyệt)",
-  "guide.step.1": "Mở Biên niên sử chiến đấu từ Hoyolab",
+  "guide.step.1": "Mở Chiến Tích từ Hoyolab",
   "guide.step.2": "Mở Công cụ dành cho nhà phát triển trên trình duyệt của bạn",
-  "guide.step.3": "Cuộn đến phần \"Nhân vật của tôi\", nhấp vào \"Tất cả nhân vật\"",
+  "guide.step.3": "Cuộn đến phần \"Nhân Vật Của Tôi\", nhấp vào \"Tất Cả Nhân Vật\"",
   "guide.step.4": "Trong Công cụ dành cho nhà phát triển, chuyển đến tab Mạng và tìm yêu cầu \"POST https://sg-public-api.hoyolab.com/event/game_record/genshin/api/character/list\"",
-  "guide.step.5": "Sao chép phản hồi của yêu cầu đó vào ô nhập liệu bên dưới",
+  "guide.step.5": "Sao chép phản hồi của yêu cầu đó vào ô nhập liệu",
   "language.select.placeholder": "Chọn ngôn ngữ",
   "input.characterData.placeholder": "Dữ liệu nhân vật",
   "input.theaterSetupType.preset": "Cấu hình có sẵn",

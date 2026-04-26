@@ -1,10 +1,10 @@
 {
   "guide.title": "如何取得角色資料（僅限瀏覽器）",
-  "guide.step.1": "從 Hoyolab 開啟戰績",
+  "guide.step.1": "從HoyoLab打開戰績",
   "guide.step.2": "在瀏覽器中開啟開發者工具",
   "guide.step.3": "滾動至「我的角色」區塊，點擊「全部角色」",
   "guide.step.4": "在開發者工具中，前往「網路」分頁，找到請求「POST https://sg-public-api.hoyolab.com/event/game_record/genshin/api/character/list」",
-  "guide.step.5": "將該請求的回應內容複製到下方輸入框",
+  "guide.step.5": "將該請求的回應複製到輸入框中",
   "language.select.placeholder": "選擇語言",
   "input.characterData.placeholder": "角色資料",
   "input.theaterSetupType.preset": "預設配置",

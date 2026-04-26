@@ -1,10 +1,10 @@
 {
   "guide.title": "Comment obtenir les données des personnages (navigateur uniquement)",
-  "guide.step.1": "Ouvrez la Chronique de bataille depuis Hoyolab",
+  "guide.step.1": "Ouvre Bilan des combats depuis HoyoLab",
   "guide.step.2": "Ouvrez les outils de développement de votre navigateur",
   "guide.step.3": "Faites défiler jusqu'à la section \"Mes personnages\", cliquez sur \"Tous les personnages\"",
   "guide.step.4": "Dans les outils de développement, allez dans l'onglet Réseau et trouvez la requête \"POST https://sg-public-api.hoyolab.com/event/game_record/genshin/api/character/list\"",
-  "guide.step.5": "Copiez la réponse de cette requête dans le champ ci-dessous",
+  "guide.step.5": "Copie la réponse de cette requête dans le champ de saisie",
   "language.select.placeholder": "Sélectionner la langue",
   "input.characterData.placeholder": "Données des personnages",
   "input.theaterSetupType.preset": "Configuration prédéfinie",

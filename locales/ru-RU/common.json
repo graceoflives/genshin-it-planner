@@ -1,10 +1,10 @@
 {
   "guide.title": "Как получить данные персонажей (только в браузере)",
-  "guide.step.1": "Откройте Боевую хронику в Hoyolab",
+  "guide.step.1": "Откройте Боевые заслуги в HoyoLab",
   "guide.step.2": "Откройте инструменты разработчика в вашем браузере",
   "guide.step.3": "Прокрутите до раздела \"Мои персонажи\", нажмите на \"Все персонажи\"",
   "guide.step.4": "В инструментах разработчика перейдите на вкладку Сеть и найдите запрос \"POST https://sg-public-api.hoyolab.com/event/game_record/genshin/api/character/list\"",
-  "guide.step.5": "Скопируйте ответ этого запроса в поле ввода ниже",
+  "guide.step.5": "Скопируйте ответ этого запроса в поле ввода",
   "language.select.placeholder": "Выберите язык",
   "input.characterData.placeholder": "Данные персонажей",
   "input.theaterSetupType.preset": "Стандартная настройка",

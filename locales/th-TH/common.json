@@ -1,10 +1,10 @@
 {
   "guide.title": "วิธีรับข้อมูลตัวละคร (เฉพาะเบราว์เซอร์เท่านั้น)",
-  "guide.step.1": "เปิด Battle Chronicle จาก Hoyolab",
+  "guide.step.1": "เปิดบันทึกการท้าทายจาก HoyoLab",
   "guide.step.2": "เปิด Developer Tools บนเบราว์เซอร์ของคุณ",
   "guide.step.3": "เลื่อนไปที่ส่วน \"ตัวละครของฉัน\" แล้วคลิก \"ตัวละครทั้งหมด\"",
   "guide.step.4": "ใน Developer Tools ไปที่แท็บ Network และค้นหาคำขอ「POST https://sg-public-api.hoyolab.com/event/game_record/genshin/api/character/list」",
-  "guide.step.5": "คัดลอกการตอบกลับของคำขอนั้นลงในช่องป้อนข้อมูลด้านล่าง",
+  "guide.step.5": "คัดลอกการตอบสนองของคำขอนั้นลงในช่องป้อนข้อมูล",
   "language.select.placeholder": "เลือกภาษา",
   "input.characterData.placeholder": "ข้อมูลตัวละคร",
   "input.theaterSetupType.preset": "การตั้งค่าสำเร็จรูป",

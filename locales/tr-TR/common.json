@@ -1,10 +1,10 @@
 {
   "guide.title": "Karakter verisi nasıl alınır (yalnızca tarayıcı)",
-  "guide.step.1": "Hoyolab'dan Battle Chronicle'ı açın",
+  "guide.step.1": "HoyoLab'dan Savaş Başarısı'nı aç",
   "guide.step.2": "Tarayıcınızda Geliştirici Araçları'nı açın",
   "guide.step.3": "\"Karakterlerim\" bölümüne kaydırın, \"Tüm karakterler\" seçeneğine tıklayın",
   "guide.step.4": "Geliştirici Araçları'nda Ağ sekmesine gidin ve「POST https://sg-public-api.hoyolab.com/event/game_record/genshin/api/character/list」isteğini bulun",
-  "guide.step.5": "O isteğin yanıtını aşağıdaki giriş alanına kopyalayın",
+  "guide.step.5": "O isteğin yanıtını giriş alanına kopyala",
   "language.select.placeholder": "Dil seçin",
   "input.characterData.placeholder": "Karakter verisi",
   "input.theaterSetupType.preset": "Ön ayarlı kurulum",
