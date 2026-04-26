@@ -1,10 +1,10 @@
 {
   "guide.title": "Come ottenere i dati dei personaggi (solo browser)",
-  "guide.step.1": "Apri Battle Chronicle da Hoyolab",
+  "guide.step.1": "Apri Risultati di combattimento da HoyoLab",
   "guide.step.2": "Apri gli Strumenti per sviluppatori sul tuo browser",
   "guide.step.3": "Scorri fino alla sezione \"I miei personaggi\", clicca su \"Tutti i personaggi\"",
   "guide.step.4": "Negli Strumenti per sviluppatori, vai alla scheda Rete e trova la richiesta「POST https://sg-public-api.hoyolab.com/event/game_record/genshin/api/character/list」",
-  "guide.step.5": "Copia la risposta di quella richiesta nel campo di input qui sotto",
+  "guide.step.5": "Copia la risposta di quella richiesta nel campo di input",
   "language.select.placeholder": "Seleziona lingua",
   "input.characterData.placeholder": "Dati del personaggio",
   "input.theaterSetupType.preset": "Configurazione predefinita",

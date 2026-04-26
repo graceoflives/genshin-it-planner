@@ -1,10 +1,10 @@
 {
   "guide.title": "Cara mendapatkan data karakter (khusus browser)",
-  "guide.step.1": "Buka Battle Chronicle dari Hoyolab",
+  "guide.step.1": "Buka Jurnal Petualangan dari HoyoLab",
   "guide.step.2": "Buka Developer Tools di browser Anda",
   "guide.step.3": "Gulir ke bagian \"Karakter Saya\", klik \"Semua karakter\"",
   "guide.step.4": "Di Developer Tools, buka tab Network dan temukan permintaan「POST https://sg-public-api.hoyolab.com/event/game_record/genshin/api/character/list」",
-  "guide.step.5": "Salin respons dari permintaan tersebut ke kolom input di bawah",
+  "guide.step.5": "Salin respons permintaan tersebut ke dalam kolom input",
   "language.select.placeholder": "Pilih bahasa",
   "input.characterData.placeholder": "Data karakter",
   "input.theaterSetupType.preset": "Pengaturan preset",
