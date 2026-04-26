@@ -28,5 +28,12 @@
   "input.setup.selectSpecialGuests.placeholder": "Sélectionner les invités spéciaux",
   "input.setup.selectSpecialGuests.helper": "Veuillez sélectionner <0>{{maxCount}}</0> invités spéciaux (actuel : {{currentCount}})",
   "input.setup.applyBtn.normal": "Appliquer la configuration personnalisée",
-  "input.setup.applyBtn.applied": "Appliqué"
+  "input.setup.applyBtn.applied": "Appliqué",
+  "element.Anemo": "Anémo",
+  "element.Cryo": "Cryo",
+  "element.Dendro": "Dendro",
+  "element.Electro": "Électro",
+  "element.Geo": "Géo",
+  "element.Hydro": "Hydro",
+  "element.Pyro": "Pyro"
 }

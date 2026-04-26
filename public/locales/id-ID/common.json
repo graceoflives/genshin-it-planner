@@ -28,5 +28,12 @@
   "input.setup.selectSpecialGuests.placeholder": "Pilih tamu spesial",
   "input.setup.selectSpecialGuests.helper": "Silakan pilih <0>{{maxCount}}</0> tamu spesial (saat ini: {{currentCount}})",
   "input.setup.applyBtn.normal": "Terapkan pengaturan kustom",
-  "input.setup.applyBtn.applied": "Diterapkan"
+  "input.setup.applyBtn.applied": "Diterapkan",
+  "element.Anemo": "Anemo",
+  "element.Cryo": "Cryo",
+  "element.Dendro": "Dendro",
+  "element.Electro": "Electro",
+  "element.Geo": "Geo",
+  "element.Hydro": "Hydro",
+  "element.Pyro": "Pyro"
 }

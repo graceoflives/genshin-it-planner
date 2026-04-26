@@ -28,5 +28,12 @@
   "input.setup.selectSpecialGuests.placeholder": "スペシャルゲストを選択",
   "input.setup.selectSpecialGuests.helper": "<0>{{maxCount}}</0>人のスペシャルゲストを選択してください（現在：{{currentCount}}）",
   "input.setup.applyBtn.normal": "カスタム設定を適用",
-  "input.setup.applyBtn.applied": "適用済み"
+  "input.setup.applyBtn.applied": "適用済み",
+  "element.Anemo": "風",
+  "element.Cryo": "氷",
+  "element.Dendro": "草",
+  "element.Electro": "雷",
+  "element.Geo": "岩",
+  "element.Hydro": "水",
+  "element.Pyro": "炎"
 }

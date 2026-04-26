@@ -28,5 +28,12 @@
   "input.setup.selectSpecialGuests.placeholder": "Выберите специальных гостей",
   "input.setup.selectSpecialGuests.helper": "Пожалуйста, выберите <0>{{maxCount}}</0> специальных гостей (текущее: {{currentCount}})",
   "input.setup.applyBtn.normal": "Применить пользовательскую настройку",
-  "input.setup.applyBtn.applied": "Применено"
+  "input.setup.applyBtn.applied": "Применено",
+  "element.Anemo": "Анемо",
+  "element.Cryo": "Крио",
+  "element.Dendro": "Дендро",
+  "element.Electro": "Электро",
+  "element.Geo": "Гео",
+  "element.Hydro": "Гидро",
+  "element.Pyro": "Пиро"
 }

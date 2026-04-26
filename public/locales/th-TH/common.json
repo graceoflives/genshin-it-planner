@@ -28,5 +28,12 @@
   "input.setup.selectSpecialGuests.placeholder": "เลือกแขกพิเศษ",
   "input.setup.selectSpecialGuests.helper": "กรุณาเลือกแขกพิเศษ <0>{{maxCount}}</0> คน (ปัจจุบัน: {{currentCount}})",
   "input.setup.applyBtn.normal": "ใช้การตั้งค่าแบบกำหนดเอง",
-  "input.setup.applyBtn.applied": "นำไปใช้แล้ว"
+  "input.setup.applyBtn.applied": "นำไปใช้แล้ว",
+  "element.Anemo": "ลม",
+  "element.Cryo": "น้ำแข็ง",
+  "element.Dendro": "ไม้",
+  "element.Electro": "ไฟฟ้า",
+  "element.Geo": "หิน",
+  "element.Hydro": "น้ำ",
+  "element.Pyro": "ไฟ"
 }

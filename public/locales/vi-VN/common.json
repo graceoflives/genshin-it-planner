@@ -28,5 +28,12 @@
   "input.setup.selectSpecialGuests.placeholder": "Chọn khách mời đặc biệt",
   "input.setup.selectSpecialGuests.helper": "Vui lòng chọn <0>{{maxCount}}</0> khách mời đặc biệt (hiện tại: {{currentCount}})",
   "input.setup.applyBtn.normal": "Áp dụng cấu hình tùy chỉnh",
-  "input.setup.applyBtn.applied": "Đã áp dụng"
+  "input.setup.applyBtn.applied": "Đã áp dụng",
+  "element.Anemo": "Phong",
+  "element.Cryo": "Băng",
+  "element.Dendro": "Thảo",
+  "element.Electro": "Lôi",
+  "element.Geo": "Nham",
+  "element.Hydro": "Thủy",
+  "element.Pyro": "Hỏa"
 }

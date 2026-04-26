@@ -28,5 +28,12 @@
   "input.setup.selectSpecialGuests.placeholder": "Özel konuk seçin",
   "input.setup.selectSpecialGuests.helper": "Lütfen <0>{{maxCount}}</0> özel konuk seçin (mevcut: {{currentCount}})",
   "input.setup.applyBtn.normal": "Özel kurulumu uygula",
-  "input.setup.applyBtn.applied": "Uygulandı"
+  "input.setup.applyBtn.applied": "Uygulandı",
+  "element.Anemo": "Rüzgar",
+  "element.Cryo": "Buz",
+  "element.Dendro": "Doğa",
+  "element.Electro": "Elektrik",
+  "element.Geo": "Toprak",
+  "element.Hydro": "Su",
+  "element.Pyro": "Ateş"
 }

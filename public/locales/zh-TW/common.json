@@ -28,5 +28,12 @@
   "input.setup.selectSpecialGuests.placeholder": "選擇特別嘉賓",
   "input.setup.selectSpecialGuests.helper": "請選擇 <0>{{maxCount}}</0> 名特別嘉賓（目前：{{currentCount}}）",
   "input.setup.applyBtn.normal": "套用自訂配置",
-  "input.setup.applyBtn.applied": "已套用"
+  "input.setup.applyBtn.applied": "已套用",
+  "element.Anemo": "風",
+  "element.Cryo": "冰",
+  "element.Dendro": "草",
+  "element.Electro": "雷",
+  "element.Geo": "岩",
+  "element.Hydro": "水",
+  "element.Pyro": "火"
 }
