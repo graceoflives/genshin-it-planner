@@ -28,6 +28,13 @@ const groupByElement = (elements: ElementType[]) =>
     },
     {} as Record<string, number>
   )
+const sortCharacter = (a: CharacterProps, b: CharacterProps, elementList: ElementType[]) => {
+  const aIndex = elementList.indexOf(a.element)
+  const bIndex = elementList.indexOf(b.element)
+  if (bIndex === -1) return -1
+  if (aIndex === -1) return 1
+  return aIndex - bIndex
+}
 
 interface Props {
   seasonData?: ImaginariumDataType
@@ -58,6 +65,7 @@ const EligibilityDisplay = ({ seasonData, characters }: Props) => {
             c.level >= ACCEPTANCE_LEVEL &&
             (seasonData.elements.includes(c.element) || seasonData.special_characters.includes(c.name))
         )
+        .toSorted((a, b) => sortCharacter(a, b, seasonData.elements))
       const upgradables = characters
         .filter(notTravelerOrManekinFilter)
         .filter(notStarterFilter)
@@ -66,6 +74,7 @@ const EligibilityDisplay = ({ seasonData, characters }: Props) => {
             c.level < ACCEPTANCE_LEVEL &&
             (seasonData.elements.includes(c.element) || seasonData.special_characters.includes(c.name))
         )
+        .toSorted((a, b) => sortCharacter(a, b, seasonData.elements))
       const totalEligible =
         seasonData?.starting_characters.length + eligibles.length + (convertible.level >= ACCEPTANCE_LEVEL ? 1 : 0)
       const starterByElements = groupByElement(
