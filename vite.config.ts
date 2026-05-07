@@ -5,13 +5,24 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/genshin-it-planner/',
   server: {
-    host: '127.0.0.1',
+    host: '127.0.0.1'
   },
   plugins: [
     react({
       babel: {
-        plugins: [['babel-plugin-react-compiler']],
-      },
+        plugins: [['babel-plugin-react-compiler']]
+      }
     })
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return id.toString().split('node_modules/')[1].split('/')[0].toString()
+          }
+        }
+      }
+    }
+  }
 })
