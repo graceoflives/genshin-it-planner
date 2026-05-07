@@ -71,8 +71,7 @@ const CustomData = ({ applyCustomData }: Props) => {
     () =>
       (list as CharacterBasicInfoProps[]).filter(
         (character) =>
-          elements.includes(character.element as ElementType) &&
-          !['Traveler', 'Manekin', 'Manekina', 'Aloy'].includes(character.name)
+          elements.includes(character.element) && !['Traveler', 'Manekin', 'Manekina', 'Aloy'].includes(character.name)
       ),
     [elements]
   )
@@ -81,8 +80,7 @@ const CustomData = ({ applyCustomData }: Props) => {
     () =>
       (list as CharacterBasicInfoProps[]).filter(
         (character) =>
-          !elements.includes(character.element as ElementType) &&
-          !['Traveler', 'Manekin', 'Manekina', 'Aloy'].includes(character.name)
+          !elements.includes(character.element) && !['Traveler', 'Manekin', 'Manekina', 'Aloy'].includes(character.name)
       ),
     [elements]
   )

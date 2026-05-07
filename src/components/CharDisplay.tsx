@@ -38,6 +38,7 @@ const CharDisplay = ({ char, isTrial = false, width = 100 }: Props) => {
         <img
           src={`images/element/${char.element ?? detail.element}.png`}
           style={{ position: 'absolute', top: 0, left: 0, width: width / 4, height: width / 4 }}
+          alt={char.element ?? detail.element}
         />
         {Boolean(isTrial) && (
           <Box

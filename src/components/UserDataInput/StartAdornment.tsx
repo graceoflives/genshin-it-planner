@@ -46,12 +46,12 @@ const StartAdornment = () => {
             {t('guide.title')}
           </Typography>
           <List>
-            {Array.from({ length: GUIDE_STEP }).map((_value, index) => (
-              <ListItem disableGutters disablePadding key={`guide-${index}`}>
+            {Array.from({ length: GUIDE_STEP }, (_, index) => 1 + index).map((value) => (
+              <ListItem disableGutters disablePadding key={`guide-${value}`}>
                 <ListItemIcon sx={{ minWidth: 32 }}>
                   <ChevronRightIcon />
                 </ListItemIcon>
-                <ListItemText primary={t(`guide.step.${1 + index}`)} />
+                <ListItemText primary={t(`guide.step.${value}`)} />
               </ListItem>
             ))}
           </List>
