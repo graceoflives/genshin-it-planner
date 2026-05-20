@@ -1,5 +1,21 @@
 [
   {
+    "name": "2026/07",
+    "month": 7,
+    "year": 2026,
+    "elements": ["Pyro", "Electro", "Cryo"],
+    "starting_characters": ["Arlecchino", "Bennett", "Cyno", "Beidou", "Ganyu", "Diona"],
+    "special_characters": ["Yumemizuki Mizuki", "Kinich", "Jahoda", "Columbina"]
+  },
+  {
+    "name": "2026/06",
+    "month": 6,
+    "year": 2026,
+    "elements": ["Pyro", "Cryo", "Geo"],
+    "starting_characters": ["Klee", "Xiangling", "Kamisato Ayaka", "Chongyun", "Albedo", "Noelle"],
+    "special_characters": ["Sangonomiya Kokomi", "Aino", "Prune", "Fischl"]
+  },
+  {
     "name": "2026/05",
     "month": 5,
     "year": 2026,

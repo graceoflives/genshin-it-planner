@@ -441,6 +441,13 @@
     "element": "Electro"
   },
   {
+    "id": 10000129,
+    "name": "Lohen",
+    "rarity": 5,
+    "weapon": "Polearm",
+    "element": "Cryo"
+  },
+  {
     "id": 10000083,
     "name": "Lynette",
     "rarity": 4,
@@ -525,6 +532,13 @@
     "element": "Hydro"
   },
   {
+    "id": 10000131,
+    "name": "Nicole",
+    "rarity": 5,
+    "weapon": "Catalyst",
+    "element": "Pyro"
+  },
+  {
     "id": 10000070,
     "name": "Nilou",
     "rarity": 5,
@@ -551,6 +565,13 @@
     "rarity": 4,
     "weapon": "Bow",
     "element": "Electro"
+  },
+  {
+    "id": 10000132,
+    "name": "Prune",
+    "rarity": 4,
+    "weapon": "Catalyst",
+    "element": "Anemo"
   },
   {
     "id": 10000035,
