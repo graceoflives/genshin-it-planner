@@ -5,9 +5,22 @@ import type { CharacterName, CharacterProps } from '../types'
 
 const useCharacterData = () => {
   const [rawCharacterData, setRawCharacterData] = useState('')
-  const { saveData } = useCharacterStore()
+  const { characters, saveData } = useCharacterStore()
   const [inputState, setInputState] = useState('default')
   const [inputMsg, setInputMsg] = useState('')
+  useEffect(() => {
+    if (characters.length > 0) {
+      const lastSavedData = {
+        retcode: 0,
+        message: 'OK',
+        data: {
+          list: characters
+        }
+      }
+      const lastSavedStr = JSON.stringify(lastSavedData, null, 2)
+      setRawCharacterData(lastSavedStr)
+    }
+  }, [])
   useEffect(() => {
     try {
       if (!rawCharacterData) {
