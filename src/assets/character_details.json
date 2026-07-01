@@ -602,6 +602,13 @@
     "element": "Cryo"
   },
   {
+    "id": 10000133,
+    "name": "Sandrone",
+    "rarity": 5,
+    "weapon": "Claymore",
+    "element": "Cryo"
+  },
+  {
     "id": 10000054,
     "name": "Sangonomiya Kokomi",
     "rarity": 5,

@@ -1,5 +1,13 @@
 [
   {
+    "name": "2026/08",
+    "month": 8,
+    "year": 2026,
+    "elements": ["Hydro", "Electro", "Cryo"],
+    "starting_characters": ["Yelan", "Aino", "Flins", "Ororon", "Skirk", "Layla"],
+    "special_characters": ["Arlecchino", "Chevreuse", "Kaedehara Kazuha", "Tighnari"]
+  },
+  {
     "name": "2026/07",
     "month": 7,
     "year": 2026,
