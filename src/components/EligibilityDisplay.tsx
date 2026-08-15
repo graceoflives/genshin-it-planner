@@ -3,7 +3,7 @@ import { Grid, Tooltip, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import defaultList from '../assets/character_details.json'
-import { ACCEPTANCE_LEVEL, CONVERTIBLE_ELEMENTS } from '../constants'
+import { ACCEPTANCE_LEVEL, ALL_ELEMENTS } from '../constants'
 import type { CharacterProps, ElementType, ImaginariumDataType } from '../types'
 import CharDisplay from './CharDisplay'
 import ElementDisplay from './ElementDisplay'
@@ -86,7 +86,7 @@ const EligibilityDisplay = ({ seasonData, characters }: Props) => {
           info: convertible,
           eligible: convertible.level >= ACCEPTANCE_LEVEL,
           shouldResonate: !seasonData.elements.includes(convertible.element),
-          resonatableElements: CONVERTIBLE_ELEMENTS.filter((element) => seasonData.elements.includes(element))
+          resonatableElements: ALL_ELEMENTS.filter((element) => seasonData.elements.includes(element))
         },
         starters,
         starterByElements,

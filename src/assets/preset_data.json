@@ -1,5 +1,13 @@
 [
   {
+    "name": "2026/09",
+    "month": 9,
+    "year": 2026,
+    "elements": ["Hydro", "Electro", "Dendro"],
+    "starting_characters": ["Columbina", "Xingqiu", "Cyno", "Kuki Shinobu", "Lauma", "Kaveh"],
+    "special_characters": ["Odette", "Sandrone", "Sucrose", "Nicole"]
+  },
+  {
     "name": "2026/08",
     "month": 8,
     "year": 2026,

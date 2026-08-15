@@ -28,6 +28,13 @@
     "element": "Cryo"
   },
   {
+    "id": 10000148,
+    "name": "Alyosha",
+    "rarity": 4,
+    "weapon": "Polearm",
+    "element": "Electro"
+  },
+  {
     "id": 10000021,
     "name": "Amber",
     "rarity": 4,
@@ -558,6 +565,13 @@
     "rarity": 4,
     "weapon": "Claymore",
     "element": "Geo"
+  },
+  {
+    "id": 10000150,
+    "name": "Odette",
+    "rarity": 5,
+    "weapon": "Sword",
+    "element": "Cryo"
   },
   {
     "id": 10000105,
