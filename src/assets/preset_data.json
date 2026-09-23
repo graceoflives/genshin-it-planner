@@ -1,5 +1,21 @@
 [
   {
+    "name": "2026/11",
+    "month": 11,
+    "year": 2026,
+    "elements": ["Hydro", "Electro", "Geo"],
+    "starting_characters": ["Yelan", "Aino", "Flins", "Fischl", "Zhongli", "Kachina"],
+    "special_characters": ["Qiqi", "Odette", "Vesna", "Jahoda"]
+  },
+  {
+    "name": "2026/10",
+    "month": 10,
+    "year": 2026,
+    "elements": ["Hydro", "Cryo", "Anemo"],
+    "starting_characters": ["Neuvillette", "Barbara", "Citlali", "Kaeya", "Wanderer", "Prune"],
+    "special_characters": ["Ineffa", "Yae Miko", "Thoma", "Chiori"]
+  },
+  {
     "name": "2026/09",
     "month": 9,
     "year": 2026,

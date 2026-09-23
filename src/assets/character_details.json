@@ -735,6 +735,20 @@
     "element": "Anemo"
   },
   {
+    "id": 10000143,
+    "name": "Vesna",
+    "rarity": 5,
+    "weapon": "Sword",
+    "element": "Anemo"
+  },
+  {
+    "id": 10000140,
+    "name": "Vodyanitsa",
+    "rarity": 5,
+    "weapon": "Catalyst",
+    "element": "Hydro"
+  },
+  {
     "id": 10000075,
     "name": "Wanderer",
     "rarity": 5,
