@@ -1,7 +1,7 @@
 import { Box, CssBaseline, Grid, IconButton, ThemeProvider, Typography } from '@mui/material'
 import { useMemo } from 'react'
 import './App.css'
-import presetDataAsset from './assets/preset_data.json'
+import presetDataAsset from './assets/month_setup.json'
 import EligibilityDisplay from './components/EligibilityDisplay'
 import { SeasonData } from './components/SeasonData'
 import SelectLanguage from './components/SelectLanguage'

@@ -8,6 +8,6 @@ const ElementDisplay = ({
   element: ElementType
   width?: number
   height?: number
-}) => <img src={`images/element/${element}.png`} style={{ width, height }} alt={element} />
+}) => <img src={`images/element/${element}.png`} style={{ width, height, display: 'block' }} alt={element} />
 
 export default ElementDisplay

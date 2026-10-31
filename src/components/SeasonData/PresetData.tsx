@@ -1,10 +1,11 @@
 import { Grid, MenuItem, TextField, Typography } from '@mui/material'
-import presetDataAsset from '../../assets/preset_data.json'
+import monthConfigsData from '../../assets/month_setup.json'
 import type { PresetDataType } from '../../types'
 import CharDisplay from '../CharDisplay'
 import ElementDisplay from '../ElementDisplay'
 import { useTranslation } from 'react-i18next'
 
+const monthConfigs = monthConfigsData as PresetDataType[]
 interface Props {
   presetName?: string
   setPresetName: (name: string) => void
@@ -25,9 +26,16 @@ const PresetData = ({ presetName, setPresetName, selectedPresetData }: Props) =>
         onChange={(e) => setPresetName(e.target.value)}
         size='small'
       >
-        {presetDataAsset.map((itData) => (
+        {monthConfigs.map((itData) => (
           <MenuItem key={itData.name} value={itData.name}>
-            {itData.name}
+            <Grid container spacing={1} alignItems='center'>
+              <Grid>{itData.name}</Grid>
+              {itData.elements.map((e) => (
+                <Grid key={e}>
+                  <ElementDisplay element={e} width={24} height={24} />
+                </Grid>
+              ))}
+            </Grid>
           </MenuItem>
         ))}
       </TextField>
