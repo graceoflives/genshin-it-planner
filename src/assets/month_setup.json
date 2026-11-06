@@ -1,5 +1,13 @@
 [
   {
+    "name": "2026/12",
+    "month": 12,
+    "year": 2026,
+    "elements": ["Pyro", "Hydro", "Geo"],
+    "starting_characters": ["Arlecchino", "Bennett", "Furina", "Xingqiu", "Navia", "Illuga"],
+    "special_characters": ["Chasca", "Varesa", "Kinich", "Iansan"]
+  },
+  {
     "name": "2026/11",
     "month": 11,
     "year": 2026,
